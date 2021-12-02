@@ -1,3 +1,5 @@
+const { values } = require("core-js/core/array")
+
 1//、组件间通信props(一)
 	// props    子组件声明接收属性三种写法    【‘todos’】  { todos:Array}   { todos:{type:Array,default:[]}}
 	// 父子之间 
@@ -111,17 +113,33 @@
 	// ​	再绑定修改数据的事件   
 	// ​	只不过在html和组件标签上绑定的@input事件不同   一个是原生的 一个是自定义的事件
 			
-	如果子组件内部没有表单类元素 也需要实现父子同步数据功能的  可以使用.sync修饰符
-5//,.sync
+	v-model和.sync区别
+		子组件有表单元素,用v-model
+		子组件当中不是表单元素,使用.sync
+7//,.sync
 	同步{父组件/子组件}数据
 	
 	不使用sync
 		父组件
 			:money = 'money' @update:money='money = $event'
-
 		子组件 
 			this.$emit('update:money',money-100)
 
 	使用sync	
 		父组件
 			:money.sync="money"
+		子组件 //必须这么写:update:xxx
+			this.$emit('update:money',money-100)
+
+	使用v-model
+		父组件
+			:value='money' @input="money = $event"
+			简写
+			v-model="money"
+		子组件 
+			props:['value']
+			@click="$emit('input',value)"  //button里
+
+	v-model和.sync区别
+		子组件有表单元素,用v-model
+		子组件当中不是表单元素,使用.sync
