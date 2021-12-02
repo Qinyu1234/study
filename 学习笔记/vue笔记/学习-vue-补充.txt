@@ -1,0 +1,15 @@
+v-once :只渲染一次
+v-clock:没渲染完成不显示
+	标签里需要使用v-vloak
+	<style>
+		[v-cloak] {
+			display: none;
+		}
+	</style>
+	
+v-on 
+修饰符
+v-on:click.one
+.one	只调1次
+.prevent	阻止默认事件
+.stop	阻止冒泡
