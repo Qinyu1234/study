@@ -1,17 +1,16 @@
 <template>
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <HintButton title="添加" test="plus" size="mini" icon="el-icon-plus"/>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import HintButton from "@/components/HintButton";
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    HintButton
   }
 }
 </script>

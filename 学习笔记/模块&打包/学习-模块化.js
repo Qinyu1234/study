@@ -21,15 +21,16 @@ ES6
         // Babel:  将ES6转为ES5
         //         将jsx转为js
     
-    1,暴露语法
+    1,暴露语法		暴露出去的都是对象
         //1,分别暴露 方法或变量前加 export
             //export function data(){}
-            //export const data = '1',
+            //export const data1 = '1',
+			//暴露出去的对象{data,data1}
         //2,统一暴露    
             //export {data,data as data1}     
-        //3,默认暴露 default后跟表达式
-            //export default dog&{} 
-                
+        //3,默认暴露 default后跟表达式 
+            //export default{a:1,b:2} 
+            //暴露出去的对象{default:{a:1,b:2}}
     2,引入 
         //1,分别暴露的引入 import {xx} from ''
             //1,{data as data1}(重命名)
@@ -38,7 +39,9 @@ ES6
         //2,统一暴露的引入
                 //跟分别的一样
         //3,默认暴露的引入
-            //import dataFun from ''
+			//完整写法 
+			//import {default as obj} from ''
+            //import obj from ''
         //4,混引入
             //import a1(默认),{stu1(分别),stu2(分别),stu3(统一),stu4(统一)} from ''
     //#region 引入babel 
