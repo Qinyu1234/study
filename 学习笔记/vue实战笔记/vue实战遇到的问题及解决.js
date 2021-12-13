@@ -85,6 +85,19 @@ const { default: router } = require("@/router")
     // 将之合并
         //watch:immediate:true 初始化后就立即执行1次
 12,向响应式数据中心添加新属性
+    响应式数据
+        // data里的数据:
+        //     persons:[
+        //         {name:'123',age:12},
+        //         {name:'fds',age:15},
+        //     ]
+        vue处理响应式数据对于数组和对象是不一样的
+        1,如果修改的是对象的属性,随便该都是响应式的
+            //this.persons[0].name='asd'
+        2,直接通过下标修改,不是
+            //this.persons[0]={name:'asd',age:15}
+        3,使用数组方法添加,是响应式
+            //this.persons.push(object)
     //响应式数据:data/state
     //响应式数据对象:值为对象的响应式数据,响应式对象颞部的所有层次数据都是响应式:options / searchList
 
