@@ -37,6 +37,11 @@
 				//to='路由/参数' :to
 			// router-view    路由组件显示区域，就是组件需要在哪显示
 
+			
+			补充:动态路由添加
+			//router是路由暴露对象
+			router.addRoutes([])
+
 		//6,路由传参
 			//1,传值:
 				//1,路由直接拼
@@ -99,3 +104,5 @@
 						//mode:'history'//模式 hash history
         				//devServer添加: historyApiFallback: true, // 任意的 404 响应都被替代为 index.html
         				//output添加: publicPath: '/', // 引入打包的文件时路径以/开头
+
+

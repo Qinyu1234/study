@@ -85,3 +85,7 @@
     获取节点值
         $event.target.value
 //#endregion
+
+补充:动态路由添加
+    //router是路由暴露对象
+    router.addRoutes([])
