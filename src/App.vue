@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
+    <input type="text" value="测试" disabled>
     <HintButton title="添加" test="plus" size="mini" icon="el-icon-plus"/>
   </div>
 </template>

@@ -105,4 +105,30 @@
         				//devServer添加: historyApiFallback: true, // 任意的 404 响应都被替代为 index.html
         				//output添加: publicPath: '/', // 引入打包的文件时路径以/开头
 
+命名视图
+	// <router-view name="a"></router-view>
+	// <router-view name="b"></router-view>
+
+	// const router = new VueRouter({
+	// 	routes: [
+	// 	{
+	// 		path: '/',
+	// 		components: {
+	// 		a: Bar,
+	// 		b: Baz
+	// 		}
+	// 	}
+	// 	]
+	// })
+
+
+
+
+
+
+
+
+
+
+
 
