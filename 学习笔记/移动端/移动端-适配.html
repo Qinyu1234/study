@@ -1,0 +1,148 @@
+em单位:父容器字体的宽度
+rem单位:根容器字体的宽度
+
+//兼容极差
+    vw:等于布局视口宽度的1%
+        //一般使用这个设置高度
+    vh:等于布局视口高度的1%
+    
+    <style>
+        html body{
+            font-size: 50px;
+        }
+        .father{
+            font-size:20px
+        }
+        .father .son{
+            width:1em;
+            height: 1rem;
+        }
+    </style>
+    <!-- 宽20px 高50px -->
+
+标准策划:
+    手机宽375
+    盒子345
+    蓝色
+    边框1px
+
+适配
+    <template>
+        方案一:
+            标准机型根字体设置为100px
+            盒子款:345/100 = 3.45rem
+        <template>
+            1,开启理想视口
+            <head>
+                <meta name="viewport" 
+                content="width=device-width,initial-scale=1.0,user-scalable=no,maximum-scale=1.0,minimum-scale=1.0">
+                <style>
+                    .demo{
+                        width:3.45rem;
+                        border: 1px solid black;
+                        background: blue;
+                    }
+                </style>
+            </head>
+                <!-- width=device-width 宽度等于设备的宽度 -->
+                <!-- initial-scale=1.0 初始的缩放倍率为1 不缩放-->
+                <!-- user-scalable=no 用户禁止缩放 -->
+                <!-- maximum-scale=1.0 最大缩放 1 -->
+                <!-- minimum-scale=1.0 最小缩放 1  -->
+            2,获取布局视口宽度,因为开启了理想视口,布局视口=设备横向独立像素值
+            <script>
+                //布局视口宽度
+                const dpwidth = document.documentElement.clientWidth
+                //计算跟字体大小
+                const rootFonstSize = (dpWidth * 100)/375
+                //设置跟字体大小
+                document.documentElement.style.fontSize = rootFonstSize +'px'
+            </script>
+        </template>
+            
+
+        方案二:
+            标准机型根字体设置为 375/10 = 37.5px
+            盒子款:345/37.5 = 9.2rem
+        <template>
+            1,开启理想视口
+            <head>
+                <meta name="viewport" 
+                content="width=device-width,initial-scale=1.0,user-scalable=no,maximum-scale=1.0,minimum-scale=1.0">
+                <style>
+                    .demo{
+                        width:9.2rem;
+                        border: 1px solid black;
+                        background: blue;
+                    }
+                </style>
+            </head>
+                <!-- width=device-width 宽度等于设备的宽度 -->
+                <!-- initial-scale=1.0 初始的缩放倍率为1 不缩放-->
+                <!-- user-scalable=no 用户禁止缩放 -->
+                <!-- maximum-scale=1.0 最大缩放 1 -->
+                <!-- minimum-scale=1.0 最小缩放 1  -->
+            2,获取布局视口宽度,因为开启了理想视口,布局视口=设备横向独立像素值
+            <script>
+                //布局视口宽度
+                const dpwidth = document.documentElement.clientWidth
+                //计算跟字体大小
+                const rootFonstSize = dpWidth/10
+                //设置跟字体大小
+                document.documentElement.style.fontSize = rootFonstSize +'px'
+            </script>
+        </template>  
+        
+        方案二-less版:
+            标准机型根字体设置为 375/10 = 37.5px
+            盒子款:345/37.5 = 9.2rem
+        <template>
+            1,开启理想视口
+            index.less文件
+                @font:375/10rem
+                .demo{
+                    width:345/@font;
+                    border: 1px solid black;
+                    background: blue;
+                }
+            <head>
+                <meta name="viewport" 
+                content="width=device-width,initial-scale=1.0,user-scalable=no,maximum-scale=1.0,minimum-scale=1.0">
+                <link rel="stylesheet" href="./index.css">
+            </head>
+                <!-- width=device-width 宽度等于设备的宽度 -->
+                <!-- initial-scale=1.0 初始的缩放倍率为1 不缩放-->
+                <!-- user-scalable=no 用户禁止缩放 -->
+                <!-- maximum-scale=1.0 最大缩放 1 -->
+                <!-- minimum-scale=1.0 最小缩放 1  -->
+            2,获取布局视口宽度,因为开启了理想视口,布局视口=设备横向独立像素值
+            <script>
+                //布局视口宽度
+                const dpwidth = document.documentElement.clientWidth
+                //计算跟字体大小
+                const rootFonstSize = dpWidth/10
+                //设置跟字体大小
+                document.documentElement.style.fontSize = rootFonstSize +'px'
+            </script>
+        </template>  
+    </template>
+
+
+非标准策划:
+    手机款750
+    盒子宽690
+    <template>
+        方案一:
+            由于手机屏幕宽一倍 (dpWidth * 100)/750 会小一倍
+                <!-- ps:标准的之前的:(dpWidth * 100)/375 -->
+            盒子宽度翻倍就行
+                6.9rem
+        方案二:
+            <!-- 直接使用就行 -->
+            @font:750/10rem
+            .demo{
+                width:750/@font;
+                border: 1px solid black;
+                background: blue;
+            }
+    </template>

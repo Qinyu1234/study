@@ -64,3 +64,21 @@
         //放弃本地代码,退回上一版本,再拉取代码到本地。
         // git reset --hard
         // git pull origin master
+       
+ssh:connect to host github.com port 22: Connection timed out报错时:
+处理方法:
+找到.ssh文件夹
+创建config配置文件
+	Host github.com
+	User git
+	Hostname ssh.github.com
+	PreferredAuthentications publickey
+	IdentityFile ~/.ssh/id_rsa
+	Port 443
+
+	Host gitlab.com
+	Hostname altssh.gitlab.com
+	User git
+	Port 443
+	PreferredAuthentications publickey
+	IdentityFile ~/.ssh/id_rsa

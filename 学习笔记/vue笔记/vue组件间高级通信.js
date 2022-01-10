@@ -143,3 +143,64 @@ const { values } = require("core-js/core/array")
 	v-model和.sync区别
 		子组件有表单元素,用v-model
 		子组件当中不是表单元素,使用.sync
+
+8//,$attrs 和$listenners  
+	本质就是父组件中给 子组件传递的所有属性组成的对象及自定义事件方法组成的对象
+
+	$attrs 如果不声明props 那么子组件当中是可以看到  如果声明了哪个属性，那么那个属性在$attrs当中看不到
+	它会排除 props声明接收的属性 以及class style
+	
+	可以通过v-bind 一次性把父组件传递过来的属性添加给子组件
+	可以通过v-on   一次性把父组件传递过来的事件监听添加给子组件
+	// <el-button type="danger" icon="el-icon-plus" size="mini"></el-button>
+
+    父组件
+    //     <HintButton type="danger" icon="el-icon-plus" size="mini" title="添加" @click="test"></HintButton>
+
+    自定义组件HintButton
+    // <a herf="javascript:;" :title="title">
+    //     <el-button v-bind="$attrs" v-on="$listeners"></el-button>
+    // </a>
+    // props:['title'],
+	接受title后,attrs就不再拿了this.$attrs变成了{icon/size/title}
+    // mounted(){
+    //     console.log(this.$attrs,this.$listeners)
+    //     //可以看到两个对象:{type/icon/size/title}属性
+    //         {xxx:f}事件
+    // }
+	对一个组件进行二次封装
+
+9//,$parent 和 $children以及$ref
+	$children：所有子组件对象的数组
+	$parent：代表父组件对象
+
+	子组件 <Son ref="son" /> this.$refs.son
+		//放在组件中拿到的是组件对象 
+		//放在html上拿到的是dom对象
+	父组件中能通过this.$refs.son.xxx拿到子组件的数据
+		基本不用!!!
+		//$children	this.$children 拿到的是所有子组件对象的数组,不能通过索引操作,因为每次子组件对象位置不固定
+		//$parent 	this.$parent (如果子组件被多个组件复用,会存在多个parent),此时使用$parent会出问题
+	//父组件当中可以通过$children找到所有的子组件去操作子组件的数据（当然可以找孙子组件）
+	//子组件当中可以通过$parent找到父组件（当然可以继续找爷爷组件）操作父组件的数据
+
+10//,封装扩展基本： 多个组件有部分相同的js代码
+
+	//html js  css 相同     封装组件
+	//单个组件js代码重复    封装函数
+	//不同的组件js代码重复  封装混合 
+
+	混入对象里的方法会添加到使用混入对象组件的各个方法里
+
+	混入对象
+		export default {
+			created:{},
+			methods:{},
+			//可以有data methods computed...  
+		}
+	使用混入对象的组件
+	   import mymixin from './mymixin'
+        export default {
+            name: 'Daughter',
+            mixins:[mymixin],//然后可以直接使用混入对象中的created/methods中的方法
+        }
