@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function ea(a, b) {
+            return a + b;
+        }
+
+        let s = ea(123, 345);
+        console.log(s);
+
+        function fn2() {
+            //return {name:"孙悟空"};
+            return function () {
+                console.log("我是内层函数");
+            }
+
+        }
+
+        console.log(fn2);
+
+        function fn3() {
+            console.log("打印");
+            return;
+            console.log("123");
+        }
+
+        console.log(fn3);
+
+        function fn4(a, b) {
+            if (typeof a === 'number' && typeof b === 'number') {
+                console.log(a + b);
+            } else {
+                console.log("类型错误");
+            }
+
+        }
+        fn4(123, 456);
+
+        function fn5(a,b) {
+            console.log('a=',a);
+            console.log('b=',b);
+        }
+        fn5(33,35)
+    </script>
+</head>
+<body>
+
+</body>
+</html>

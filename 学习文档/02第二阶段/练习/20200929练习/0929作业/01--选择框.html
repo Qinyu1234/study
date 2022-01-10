@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        window.onload=function () {
+            let checkedAllBtn=document.getElementById('checkedAllBtn'); //获取全按钮
+            let checkedNoBtn=document.getElementById('checkedNoBtn');//全不选
+            let checkedRevBtn=document.getElementById('checkedRevBtn');//反选
+            let sendBtn=document.getElementById('sendBtn');//提交
+            let items=document.getElementsByName('items');//获取name属性列表
+            let checkedAllBox=document.getElementById('checkedAllBox');//获取全选/全不选
+            //给全选绑定单击函数
+            checkedAllBtn.onclick=function () {
+                //遍历items中的元素  将四个框全部为选中状态  checked属性  选中或返回元素
+                //alert(123);
+                for (let i=0;i<items.length;i++){
+                    items[i].checked=true;
+                }
+                //点击全选时，需要四个框与上面的全选全不选同时选中
+                checkedAllBox.checked=true;
+            };
+            //全不选
+            checkedNoBtn.onclick=function () {
+                for (let i=0;i<items.length;i++){
+                    items[i].checked=false;
+                }
+                //点击全不选时，上面的全选全不选也不要有选中状态
+                checkedAllBox.checked=false;
+            };
+            //反选
+            checkedRevBtn.onclick=function () {
+                for (let i=0;i<items.length;i++){
+                    //先遍历元素  如果元素为选中状态  则改为false不选中
+                    //第一种  用if判断  如果为true的  改为false
+
+                   /* if (items[i].checked===true){
+                        items[i].checked=false;
+                    }else {
+                        items[i].checked=true;
+                    }*/
+                    //第二种  非运算  将item[i].checked取反
+                    items[i].checked=!items[i].checked;
+                }
+                let checked = document.querySelectorAll("[name=items]:checked");
+                checkedAllBox.checked = checked.length === items.length;
+            };
+            //提交按钮
+            sendBtn.onclick=function () {
+                for (let i=0;i<items.length;i++){
+                    if (items[i].checked){
+                        alert(items[i].value);
+                    }
+                }
+            };
+            //当点击全选全不选按钮时，绑定单击响应函数与下面的4个多选框同步
+            checkedAllBox.onclick=function () {
+                for (let i=0;i<items.length;i++){
+                    //将items[i]元素与全选全不选按钮框绑定  如果为选中 则都选中  同步
+                    items[i].checked=checkedAllBox.checked;
+                }
+            };
+            //当全选全不选勾上时，下面的4个多选框中如果有任意一个未选中时  上面的全选全不选不勾
+            for (let i=0;i<items.length;i++){
+                //当下面的4个多选框有任意一个为false时，则全选全不选按钮为不选中
+                //为4个框绑定一个单击响应函数
+                //console.log(items.length);
+                items[i].onclick = function () {
+                    //使用伪类方法  查询选中的元素个数与items个数比较  如果全等 则是全选
+                    //获取选中的元素
+                    let checked = document.querySelectorAll("[name=items]:checked");
+                    checkedAllBox.checked = checked.length === items.length;
+
+                }
+
+            }
+
+
+
+        };
+    </script>
+</head>
+<body>
+<form method="post" action="">
+    你爱好的运动是？<input type="checkbox" id="checkedAllBox">全选/全不选
+
+    <br>
+    <input type="checkbox" name="items" value="足球">足球
+    <input type="checkbox" name="items" value="篮球">篮球
+    <input type="checkbox" name="items" value="羽毛球">羽毛球
+    <input type="checkbox" name="items" value="乒乓球">乒乓球
+    <br>
+    <input type="button" id="checkedAllBtn" value="全　选">
+    <input type="button" id="checkedNoBtn" value="全不选">
+    <input type="button" id="checkedRevBtn" value="反　选">
+    <input type="button" id="sendBtn" value="提　交">
+</form>
+</body>
+</html>

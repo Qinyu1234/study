@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>13_元素滚动</title>
+</head>
+<body style="height: 2000px;">
+<div class="box" style="border:1px solid black;width:100px;height:150px;overflow:auto">
+  This is some text. This is some text. This is some text. This is some text.
+  This is some text. This is some text. This is some text. This is some text.
+  This is some text. This is some text. This is some text. This is some text.
+  This is some text. This is some text. This is some text. This is some text.
+  This is some text. This is some text. This is some text. This is some text.
+  This is some text. This is some text. This is some text. This is some text.
+  his is some text.
+</div>
+<br>
+<br>
+<br>
+<button id="btn1">得到scrollTop</button>
+<button id="btn2">设置scrollTop</button>
+
+<script type="text/javascript" src="js/jquery-1.10.1.js"></script>
+<script type="text/javascript">
+    /*
+   需求:
+   1. 得到div或页面滚动条的坐标
+   2. 让div或页面的滚动条滚动到指定位置
+   */
+    $(function () {
+      $('#btn1').click(function () {
+        console.log($('.box').scrollTop());
+       // console.log($('body').scrollTop());//ie
+       // console.log($(document).scrollTop());//读取网页移动的距离
+        $(document).scrollTop(300);//传值的话代表移动至多少
+      })
+
+    })
+
+</script>
+</body>

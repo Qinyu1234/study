@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>条件运算符</title>
+    <script>
+        let a=40,b=80,c=30;
+        max=a>b?a:b;
+        max=max>c?max:c;
+        console.log("max=",max);
+        let e=50,f=30;
+        max=e>f?alert("e大"):alert("f大");
+        a=prompt("请输入数字");
+        if (a>100){
+            alert("奖励一本书");
+        }else if (a>80){
+            alert("奖励一颗糖");
+        }else {
+            alert("什么也没有");
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>

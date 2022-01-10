@@ -1,0 +1,62 @@
+
+*{
+    margin: 0;
+    padding: 0;
+}
+#main{
+    width: 340px;
+    height: 400px;
+    background-color: #b7d4a8;
+    border: 10px solid #000;
+    border-radius: 20px;
+    margin: 50px auto;
+    /*
+   开启弹性空间  给父元素设置
+   */
+    display: flex;
+    /* 默认主轴位置为横向  改变主轴位置为垂直方向  */
+    flex-flow: column;
+    /*设置侧轴横向的位置*/
+    align-items: center;
+    /*设置盒子的分布*/
+    justify-content: space-around;
+}
+#stage{
+    width: 300px;
+    height: 300px;
+    border: 2px solid #000;
+    position: relative;
+    /*background: yellowgreen;*/
+}
+#snake >div{
+    width: 10px;
+    height: 10px;
+    background: #000;
+    position: absolute;
+    border: 1px solid #b7d4a8;
+    box-sizing: border-box;
+}
+#food{
+    width: 10px;
+    height: 10px;
+    /*background: #000;*/
+    position: absolute;
+    left: 100px;
+    top: 50px;
+}
+#food>div{
+    width: 50%;
+    height: 50%;
+    background: #000;
+    float: left;
+    transform: rotate(45deg);
+}
+#score-level{
+    width: 304px;
+    color: orangered;
+    font: bold 20px 'Courier';
+    /* background: red;*/
+    display: flex;
+    justify-content: space-between;
+}
+

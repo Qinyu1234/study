@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        /*
+
+            在网页中打印一个图形：
+                *****
+                *****
+                *****
+                *****
+                *****
+         */
+        for (let i=0;i<5;i++){
+            for (let j=0;j<5;j++){
+                document.write("*");
+            }
+            document.write("<br>");
+        }
+        /*
+
+          在网页中打印一个图形：
+              *         a=0  b<1
+              **        a=1  b<2
+              ***       a=2  b<3
+              ****      a=3  b<4
+              *****     a=4  b<5
+       */
+        for (let a=0;a<5;a++){
+            for (let b=0; b<a+1;b++){
+                document.write("*");
+            }
+
+            document.write("<br>");
+        }
+        /*
+
+        在网页中打印一个图形：
+            *****         c=0  d<5
+            ****          c=1  d<4
+            ***           c=2  d<3
+            **            c=3  d<2
+            *             c=4  d<1
+     */
+        for (let c=0;c<5; c++){
+            for (let d=0;d<5-c;d++){
+                document.write("*");
+            }
+            document.write("<br>");
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>

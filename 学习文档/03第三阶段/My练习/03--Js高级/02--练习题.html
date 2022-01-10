@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        /*
+        计算字符串数值中每个字母出现的次数
+         */
+        //1、
+        var str='dfaaacccgggggnsaguigevavcxzs';
+        //声明一个数组
+        var arr=[];
+        //遍历字符串
+        for (var i = 0; i < str.length; i++) {
+            arr[str[i]]=arr[str[i]]+1 || 1;
+        }
+        console.log(arr);
+
+        //2、
+        var obj={};
+        for (var j = 0; j < str.length; j++) {
+            if (obj[str[j]]){
+                obj[str[j]]++;
+            }else {
+                obj[str[j]]=1;
+            }
+        }
+        for(let n in obj){
+            console.log(n+"出现了:"+obj[n]+"次");
+        }
+
+        //3、
+        const str2 = 'jshdjsihh';
+        const arr2 = str2.split('').sort();
+        let obj2 = {}
+        for (let i in arr2) {
+            if (!obj2[arr2[i]]) {
+                obj2[arr2[i]] = 0;
+            }
+            obj2[arr2[i]] ++;
+        }
+        console.log('arr2', arr2)
+        console.log('obj2', obj2)
+    </script>
+</head>
+<body>
+
+</body>
+</html>

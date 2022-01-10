@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        /*
+        *
+        * 快速排序（quick sort）
+        *   [5,1,3,4,9,7,8,6,2]
+        *   - 思路：
+        *       1.先从数组提取一个基数
+        *           5
+        *       2.创建两个数组，一个叫做left，一个叫right
+        *           left = []   right = []
+        *       3.将数组中的每一个值和基数进行比较
+        *           比基数大的，放入到right；
+        *           比基数小的，放入到left
+        *           left = [1,3,4,2]   right = [9,7,8,6]
+        *           [1,3,4,2] 5 [9,7,8,6]
+        *       4.对left和right两个数组继续重复上述步骤
+        *
+        *
+        * */
+        let arr = [5,9,3,4,7,1,8,6,2];
+        //先遍历数组
+        function fc(arr) {
+            var left=[];//左边的数组
+            var right=[];//右边数组
+            var a=parseInt(arr.length/2);//中间位置--7
+            if (arr.length<2){
+                //基线，停止
+                return arr;
+            }
+            for (let i=0;i<arr.length;i++) {
+                if (arr[i]===arr[a]){
+                    continue;
+                } else if (arr[i] > arr[a]) {
+                    //如果大于7，放右边数组
+                    right.push(arr[i]);
+                }else {
+                    //否则放左边数组
+                    left.push(arr[i]);
+                }
+            }
+            //console.log(left);
+            //console.log(right);
+           // return left.concat(arr[a],concat(right));
+            //result=left.concat(arr[a]);
+            //result=result.concat(right);
+            //console.log(result);
+            //重复执行上面的并返回
+            return fc(left).concat(arr[a],fc(right));
+        }
+
+        console.log(fc(arr));
+
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

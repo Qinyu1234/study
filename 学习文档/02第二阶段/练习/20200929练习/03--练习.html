@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        window.onload=function () {
+            document.getElementById("btn01").onclick =function () {
+                //获取list对象
+                let list=document.getElementById("list");
+                //创建一个新的元素
+                let li=document.createElement("li");
+                let text=document.createTextNode("白骨精");
+                //将text放入到li中
+                li.appendChild(text);
+                //将li放入list中
+                list.appendChild(li);
+               // li.innerHTML="蜘蛛精";
+            }
+            document.getElementById("btn02").onclick=function () {
+                let list=document.getElementById("list");
+                let li=document.createElement("li");
+                list.appendChild(li);
+                li.innerHTML="蜘蛛精";
+            };
+        };
+    </script>
+</head>
+<body>
+<button id="btn01">按钮1</button>
+<button id="btn02">按钮2</button>
+
+<ul id="list">
+    <li>孙悟空</li>
+    <li>猪八戒</li>
+    <li>沙和尚</li>
+    <li>唐僧</li>
+</ul>
+</body>
+</html>

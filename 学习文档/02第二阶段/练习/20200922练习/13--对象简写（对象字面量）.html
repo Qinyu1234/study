@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        /*
+        对象字面量==也是对象的一种简写属性，对象里面可以在放一个对象
+         */
+        let obj={//直接简写，不需要写后面的Object();
+            name:"孙悟空",//里面可以直接写属性，后面用逗号隔开，最后一个属性，不写逗号
+            age:18,
+            text:{//在对象中重新套一个对象,直接是对象名:{}
+                name2:"猪八戒",
+                sha:{//在里面继续套一个对象
+                    name3:"唐僧",
+                }
+            }
+
+        };
+        console.log(obj);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

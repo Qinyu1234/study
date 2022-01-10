@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function Fn(name,age) {
+            this.name=name;
+            this.age=age;
+            this.sayhello=function () {
+                alert(`大家好,我是${this.name},我今年${this.age}`);
+            }
+        }
+        let per=new Fn("小张",20);
+        let per2=new Fn("小王",20);
+        console.log(per);
+        console.log(per2);
+        per.sayhello();
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>运算符</title>
+    <script>
+        /*
+        预算符：通过运算可以对一个值或多个值进行各种运算
+            对一个值进行运算的，称为一元运算
+            对2个值进行运算的，称为二元运算
+        算术运算符
+            +
+                对两个值进行加法运算
+            -
+                对两个值进行减法运算
+            *
+                对两个值进行乘法运算
+            /
+                对两个值进行除法运算
+            **
+                对两个值进行幂运算--几次方
+            %
+                摸计算  求余数  10%3  相当于10÷3=3余1   结果为1
+         */
+
+        //任意数和空串（""）相加，都会转化为字符串String并做拼串操作
+        let result=10+30;//数值相加
+        result="你好"+30;//字符串+数值会转化为一串字符串
+        result=NaN+0;//NaN
+        //任意数值-0  /1  *1都会隐形转化为number
+        result=45-10;
+        result=true-false;
+        result=3*2;//6
+        result=6/3;//2
+        result=3**2;//9
+        result=10%4;//2
+        console.log(result,typeof result);
+        //1.输出的值在控制台显示  一个字符串+任意值=拼串  result=值；
+        console.log("result=" +result);
+        //2.还可以这么写
+        console.log("result=",result);
+        //3.或者这种
+        console.log(`result=${result}`);
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

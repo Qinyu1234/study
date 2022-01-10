@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        /*
+        函数：是为了储存代码,
+         一、声明函数
+            fonction 函数名(){
+                语句...
+            }
+            fonction fn（[形参1，形参2，...--可写可不写]）{
+                语句...
+            }
+         二、函数表达式
+            let fn=function([形参1，形参2，...--可写可不写]){
+                    语句...
+            }
+        三、调用函数：
+        fn（[实参1，实参2...--可写可不写]）;//与上面的形参是一一对应的，将实参的值赋值给形参
+         */
+        function fn(a,b) {
+            if (typeof a==="number"&&typeof b==="number"){
+                console.log(a*b);
+                console.log(a+b);
+            }else {
+                console.log("类型错误");
+            }
+
+        }
+        fn(2,3,4);
+        fn(4,4,6,7,8);
+        fn(null,undefined);
+        fn(true,false);
+
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #box1{
+            width: 100px;
+            height: 100px;
+            background-color: #9a6e3a;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+<div id="box1"></div>
+<script>
+    /*
+    描述  当键盘按下上下左右键时  盒子向上下左右连续移动10px  兼容ie11  所以要用var
+     */
+    var box1=document.getElementById('box1');
+    //创建一个变量  表示盒子移动的速度
+    var str=null;
+    //设置一个定时器  第一个参数  一个回调函数  第二个参数  执行的时间  毫秒
+    setInterval(function () {
+        switch (str) {
+            case 'Up':
+            case 'ArrowUp':
+                box1.style.top=box1.offsetTop-10+'px';
+
+        }
+    },30)
+
+</script>
+</body>
+</html>

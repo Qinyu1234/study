@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script type="text/javascript">
+    function Computer(name,brand,price,color) {
+        this.name = name;
+        this.brand = brand;
+        this.price = price;
+        this.color = color;
+    }
+    Computer.prototype.playGame = function () {
+      console.log('玩游戏')
+    };
+
+//    constructor  是构造函数 显式圆形对象上的一个属性  指向这个原型对象 对应的构造函数
+    var t1 = new Computer('macBook','apple','18000','银色');
+    console.log(t1)
+    
+//    Function  new了  Function
+//    Function 即是一个实例化对象  也是其自己的构造函数
+//    实例化对象的 __proto__  指向构造函数的 prototype
+    console.log(Function.prototype === Function.__proto__)
+</script>
+</body>
+</html>

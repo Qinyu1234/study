@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        /*
+        Date:
+            所有与日期相关的属性可以用Data来表示
+         */
+        let d= new Date();//用来表示当前执行的日期
+        console.log(d);
+        d= new Date("5/6/2020 22:32:6");//创建一个指定日期
+        console.log(d);
+        /*
+        getDay() 获取当前对象是周几
+            返回值：0-6之间的数字
+                0代表周一
+                6代表周日
+         */
+        let arr=["周日","周一","周二","周三","周四","周五","周六"]
+        day=d.getDay();
+         console.log(arr[day]);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

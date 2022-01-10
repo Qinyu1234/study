@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let re=/[a-zA-Z]/;//含有a-z小写  A-Z大写   a-zA-Z任意字母
+    console.log(re.test('k'));//true
+    re=/[0-9]/;//含有0-9任意数
+    console.log(re.test('k8'));//true
+    re=/[^0-9]/;//[^]  表示除了
+    console.log(re.test('8'));//false
+    console.log(re.test('k8'));//true
+    re=/^[a]/;//以[]开头
+    console.log(re.test('ak8'));//true
+    re=/[b]$/;//以$前面的结束
+    console.log(re.test('k8sbg'));//false
+
+</script>
+</body>
+</html>

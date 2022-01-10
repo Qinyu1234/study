@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>if练习3</title>
+    <script>
+        //用户输入三个数字分别存入变量num1 num2  num3  然后对3个变量进行从小到大的排序
+        //num1、num2、num3返回的prompt是字符串String，但是此时是对用户输入的进行大小对比number，此时需要将String转化为number
+        //可以在if中转化，也可以直接在prompt前直接+转化为数值然后在赋值给num1、num2、num3；
+        let num1 = +prompt("请输入数字");
+        let num2 = +prompt("请输入数字");
+        let num3 = +prompt("请输入数字");
+        //三个数值输入完成后，需要对数值进行判断大小
+        //首选，先找到最小值
+        if (num1 < num2 && num1 < num3) {
+            //在这个阶段，可以判断出num1最小
+            //如果上面的成立，则判断2和3谁小
+            if (num2 < num3) {
+                alert(num1 + "," + num2 + "," + num3);
+            } else {
+                alert(num1 + "," + num3 + "," + num2);
+            }
+
+        } else if (num2 < num1 && num2 < num3) {
+            //num2次阶段最小
+            if (num1 > num3) {
+                //num2  num3  num1
+                alert(num2 + "," + num3 + "," + num1);
+            }else {
+                alert(num2 + "," + num1 + "," + num3);
+            }
+
+        } else {
+            //num3最小，比较剩下的1和2
+            if (num1 < num2) {
+                alert(num3 + "," + num1 + "," + num2);
+            } else {
+                alert(num3 + "," + num2 + "," + num1);
+            }
+        }
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

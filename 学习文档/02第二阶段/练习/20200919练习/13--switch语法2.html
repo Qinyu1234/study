@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        //switch语句
+        /*
+        语法：
+            switch（条件表达式）{
+                case 表达式:    switch后面的条件表达式与case后的表达式全等时才能执行
+                    语句...
+                    break;
+                case 表达式:
+                    语句...
+                    break;
+                default:
+                    语句...
+                    break;
+
+            }
+
+         */
+        //请在键盘输入狗狗的年龄，1-3岁需要打疫苗，4-9岁需要多溜溜，10-15需要多陪伴；其他的请重新输入
+        //switch后面的表达式要与case后的表达式全等才是执行代码
+        let a= +prompt("请输入狗的年龄");
+
+        switch(a) {
+            case 1:
+            case 2:
+            case 3:
+                console.log(`${a}岁狗狗该打疫苗了`);
+                break;
+            case 4:
+            case 5:
+            case 6:
+            case 7:
+            case 8:
+            case 9:
+                console.log("需要多溜溜");
+                break;
+            case 10:
+            case 11:
+            case 12:
+            case 13:
+            case 14:
+            case 15:
+                console.log("需要多陪伴");
+                break;
+            default:
+                console.log("请重新输入");
+                break;
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>

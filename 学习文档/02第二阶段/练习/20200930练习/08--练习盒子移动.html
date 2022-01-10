@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #box1{
+            width: 100px;
+            height: 100px;
+            background: yellowgreen;
+        }
+    </style>
+</head>
+<body>
+<div id="box1"></div>
+<script>
+    /*
+    描述   在鼠标移入页面时，鼠标移动的位置就是box1的位置
+     */
+    //先获取box1
+    let box1=document.getElementById('box1');
+    //给页面绑定鼠标移入时间
+    document.onmousemove=function (event) {
+        //获取鼠标移动的坐标
+        let x=event.clientX;
+        let y=event.clientY;
+        box1.style.left=x+document.documentElement.scrollLeft+'px';
+        box1.style.left=y+document.documentElement.scrollTop+'px';
+    };
+</script>
+</body>
+</html>

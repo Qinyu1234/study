@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        /*在网页中写一个图形
+        *****
+        *****
+        *****
+        *****
+        *****
+         */
+        for (let i=0;i<5;i++){
+
+            for (let a=0; a<5; a++){
+                document.write("* &nbsp;");
+            }
+            document.write("<br>");
+
+        }
+        //在网页中输出一个图形
+        /*
+
+             *       1行  a=0  i=1
+             **      2行  a=1  i=2
+             ***          a=2  i=3
+             ****         a=3  i=4
+             *****        a=4  i=5
+
+         */
+        for (i=0;i<10;i++){
+
+            for (a=0; a<i+1;a++){
+                document.write("*");
+            }
+            document.write("<br>");
+        }
+        //做一个如下图形
+        /*
+                *****  1行  i=0  a=5
+                ****    2   i=1  a=4
+                ***     3    2    3
+                **      4    3    2
+                *       5    4    1
+         */
+        for (i=0;i<5;i++){
+            for (a=0;a<5-i;a++){
+                document.write("*");
+            }
+            document.write("<br>");
+        }
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

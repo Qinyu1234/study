@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #box1{
+            width: 100px;
+            height: 100px;
+            background-color: tomato;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+
+<div id="box1"></div>
+
+<script>
+    /*
+    *   使box1根据不同的按键，向不同的方向移动，要求兼容IE11
+    * */
+    //获取box1
+    var box1=document.getElementById('box1');
+    //绑定一个按键的事件
+    document.addEventListener('keydown',function (event) {
+        //判断按键按下的是否是上下左右键
+        /*
+         ArrowUp   Up
+         ArrowDown Down
+         ArrowLeft Left
+         ArrowRight Right
+         */
+        //console.log(event.key);
+        switch (event.key) {
+                case 'ArrowUp':
+                case 'Up':
+                   //向上
+                    box1.style.top=box1.offsetTop-10+'px';
+                    break;
+                case 'ArrowDown':
+                case 'Down':
+                    //向下
+                    box1.style.top=box1.offsetTop+10+'px';
+                    break;
+                case 'ArrowLeft':
+                case 'Left':
+                    //向左
+                    box1.style.left=box1.offsetLeft-10+'px';
+                    break;
+                case 'ArrowRight':
+                case 'Right':
+                    //向右
+                    box1.style.left=box1.offsetLeft+10+'px';
+                    break;
+
+        }
+    });
+</script>
+
+</body>
+</html>

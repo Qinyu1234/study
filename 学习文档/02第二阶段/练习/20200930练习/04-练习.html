@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            width: 500px;
+            margin: 0 auto;
+        }
+
+        p{
+            width: 400px;
+            height: 300px;
+            background: pink;
+
+            overflow: auto;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <h2>
+        欢迎注册，请仔细阅读以下协议：
+    </h2>
+    <p id="info">
+        亲爱的用户，请一定要遵守我们的协议，要不然就别注册
+        亲爱的用户，请一定要遵守我们的协议，要不然就别注册
+        亲爱的用户，请一定要遵守我们的协议，要不然就别注册
+        亲爱的用户，请一定要遵守我们的协议，要不然就别注册
+        亲爱的用户，请一定要遵守我们的协议，要不然就别注册
+        亲爱的用户，请一定要遵守我们的协议，要不然就别注册
+        亲爱的用户，请一定要遵守我们的协议，要不然就别注册
+        亲爱的用户，请一定要遵守我们的协议，要不然就别注册
+        亲爱的用户，请一定要遵守我们的协议，要不然就别注册
+        亲爱的用户，请一定要遵守我们的协议，要不然就别注册
+        亲爱的用户，请一定要遵守我们的协议，要不然就别注册
+        亲爱的用户，请一定要遵守我们的协议，要不然就别注册
+        亲爱的用户，请一定要遵守我们的协议，要不然就别注册
+        亲爱的用户，请一定要遵守我们的协议，要不然就别注册
+        亲爱的用户，请一定要遵守我们的协议，要不然就别注册
+        亲爱的用户，请一定要遵守我们的协议，要不然就别注册
+        亲爱的用户，请一定要遵守我们的协议，要不然就别注册
+        亲爱的用户，请一定要遵守我们的协议，要不然就别注册
+        亲爱的用户，请一定要遵守我们的协议，要不然就别注册
+        亲爱的用户，请一定要遵守我们的协议，要不然就别注册
+        亲爱的用户，请一定要遵守我们的协议，要不然就别注册
+        亲爱的用户，请一定要遵守我们的协议，要不然就别注册
+        亲爱的用户，请一定要遵守我们的协议，要不然就别注册
+    </p>
+    <input disabled type="checkbox"> 我已仔细阅读，并严重同意以上协议
+    <input disabled type="submit" value="注册">
+</div>
+
+<script>
+    //先获取到使用滚动条的p标签
+    let info=document.getElementById("info");
+    //获取input对象
+    let input=document.getElementsByTagName("input");
+    //给info绑定一个滚动函数
+    info.onscroll=function () {
+        if (info.scrollHeight-info.scrollTop===info.clientHeight){
+            //进入判断说明滚动条到底了
+            input[0].disabled=false;
+            input[1].disabled=false;
+        }
+    };
+</script>
+</body>
+</html>

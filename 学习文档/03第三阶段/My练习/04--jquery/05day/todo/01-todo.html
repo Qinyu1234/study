@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>琳</title>
+		<link rel="stylesheet" href="index.css">
+		<style>
+			.todo-main li button {
+				display: none;
+			}
+		</style>
+		<script type="text/javascript" src="jquery-1.11.1.min.js"></script>
+		<script type="text/javascript">
+			$(function () {
+//			    父元素ul
+			    var $todoMain = $('.todo-main');
+//			    全选全不选的复选框
+			    var $checkAll = $('#checkAll');
+
+                var dataJson = [
+                    {
+                        'content':'吃饭'
+                    },
+                    {
+                        'content':'睡觉'
+                    },
+                    {
+                        'content':'滑雪'
+                    },
+					{
+						'content':'看书'
+					}
+                ];
+//              数据绑定
+				bindData(dataJson);
+				function bindData(data) {
+					//alert(data.length)
+					for (var i = 0; i < data.length; i++) {
+						$todoMain.append('<li class="todoItem" style="background: rgb(255, 255, 255);">' +
+								'<label><input type="checkbox"><span>'+data[i].content+'</span></label>' +
+								'<button class="btn btn-danger" style="display: none;">删除</button></li>');
+					}
+					allTodos();
+				}
+				//设置全部  将数字设置为ul下li的长度即可
+				function allTodos() {
+					var $allTodos = $('#allTodos');
+					$allTodos.html($('.todo-main>li').length);
+				}
+
+				//给复选框绑定单击事件
+				$('.todo-main').on('click','li',function () {
+					//绑定单击事件
+					allCompletedTodos();
+					if ($todoMain.find(':checkbox:checked').length==$todoMain.children('li').length){
+						$checkAll.prop('checked',true);
+					}else {
+						$checkAll.prop('checked',false);
+					}
+
+				})
+				//设置已完成数字 将ul下li里面的input选中个数
+				function allCompletedTodos() {
+					$('#allCompletedTodos').html($todoMain.find(':checkbox:checked').length);
+
+				}
+				//给全选按钮绑定单击事件
+				$('#checkAll').click(function () {
+					$todoMain.find(':checkbox').prop('checked',this.checked);
+					allCompletedTodos()
+					if ($todoMain.children('li').length==0){
+						$('#checkAll').prop('checked',false);
+					}
+				})
+				//绑定鼠标移入移出事件
+				$todoMain.on('mouseenter','li',function () {
+					this.style.background='#ccc';
+					$(this).find('button').show();
+				}).on('mouseleave','li',function () {
+					this.style.background='#fff';
+					$(this).find('button').hide();
+				})
+				//给删除按钮绑定单击事件
+				$todoMain.on('click','button',function () {
+					$(this).parent().remove();
+					allCompletedTodos();
+					allTodos();
+					if ($todoMain.children('li').length==0){
+						$('#checkAll').prop('checked',false);
+					}
+
+				})
+				//清除已完成任务按钮绑定单击事件
+				$('#removeAllCompleted').click(function () {
+					$todoMain.find(':checkbox:checked').parent().parent().remove();
+					allCompletedTodos();
+					allTodos();
+					if ($todoMain.children('li').length==0){
+						$('#checkAll').prop('checked',false);
+					}
+					
+				})
+				//输入框不为空时新建li
+
+				$('#newTodo').keyup(function (event) {
+				if (event.keyCode==13){
+					//获取输入框中文本
+					var content=$('#newTodo').val().trim();
+					var data=[
+						{
+							'content':content
+						},]
+					if (content){
+						bindData(data);
+					}else {
+						alert('请不要输入空的信息');
+					}
+					$('#newTodo').val('');
+					allCompletedTodos();
+					$('#checkAll').prop('checked',false);
+
+				}
+				})
+
+			})
+		</script>
+	</head>
+
+	<body>
+		<div id="root">
+			<div class="todo-container">
+				<div class="todo-wrap">
+					<div class="todo-header">
+						<input id="newTodo" type="text" placeholder="请输入你的任务名称，按回车键确认" />
+					</div>
+					<ul class="todo-main">
+
+					</ul>
+					<div class="todo-footer">
+						<label>
+          <input id="checkAll" type="checkbox"/>
+        </label>
+						<span>
+          已完成<span id="allCompletedTodos">0</span> / 全部<span id="allTodos">2</span>
+						</span>
+						<button id="removeAllCompleted" class="btn btn-danger">清除已完成任务</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+	</body>
+
+</html>

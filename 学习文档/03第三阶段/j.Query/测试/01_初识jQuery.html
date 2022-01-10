@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>01_初识jQuery</title>
+  <script type="text/javascript">
+      window.onload = function () {
+          var  btn1 = document.querySelector('#btn1');
+          var username = document.querySelector('#username');
+          btn1.onclick = function () {
+              alert(username.value);
+          }
+      }
+  </script>
+  <!--jquery引入-->
+  <script type="text/javascript" src="js/jquery-1.10.1.js"></script>
+  <!--我们的代码要在jquery的代码之后引入-->
+  <script type="text/javascript">
+    //  dom对象的方法 只能用于dom对象对象的操作  jquery对象的方法只能用于jquery对象的操作
+//    但是dom对象和jquery对象可以互相转换
+//    加载完成的回调函数
+    $(function () {
+        $('#btn2').click(function () {
+            alert($('#username').val())
+        })
+    });
+
+  </script>
+</head>
+<body>
+<!--
+需求: 点击"确定"按钮, 提示输入的值
+-->
+
+用户名: <input type="text" id="username">
+<button id="btn1">确定(原生版)</button>
+<button id="btn2">确定(jQuery版)</button>
+</body>
+
+</html>

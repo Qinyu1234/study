@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        /*
+        对数组中的数字进行排序
+         */
+        //第一种方法：冒泡排序对 比较左右相邻的数字  如果前面的大于后面的  则两个交换位置
+       
+        let arr=[10,9,8,7,6,5,4,3,2,1];
+        for (let i=0;i<arr.length;i++){
+            for (let j=0;j<arr.length-1;j++){
+                if (arr[j]>arr[j+1]){
+                    let a=arr[j];
+                    arr[j]=arr[j+1];
+                    arr[j+1]=a;
+                }
+            }
+        }
+        console.log(arr);
+
+       
+        //第二种方法  递归快排  找到一个基线位置，比基线大的放左边数组  比基线小的  放右边数组  依次类推
+       /*
+        let arr2=[9,8,7,6,5,4,3,2,1];
+        function fn(arr2) {
+            if (arr2.length<2){
+                return arr2;
+            }
+            let left=[];
+            let right=[];
+            for (let i=1;i<arr2.length;i++){
+                if (arr2[i]>arr2[0]){
+                    right.push(arr2[i]);
+                }else {
+                    left.push(arr2[i]);
+                }
+            }
+            return fn(left).concat(arr2[0],fn(right));
+        }
+        fn(arr2);
+        console.log(fn(arr2));
+*/
+        
+        //第三种方法  sort（） 升序排列
+        /*
+        let arr3=[9,8,7,6,5,4,3,2,1];
+        arr3.sort(function (a,b) {
+            return a-b;
+        })
+        console.log(arr3);
+        //sort（） 降序排列
+        let arr4=[7,8,9,1,5,2,3,4,6];
+        arr4.sort(function (a,b) {
+            return b-a;
+        })
+        console.log(arr4);
+        //乱序排序  将一个数字中整齐的排列顺序打乱  比如彩票号  掷筛子
+        let arr5=[9,8,7,6,5,4,3,2,1];
+        arr5.sort(function (a,b) {
+            return Math.random()-Math.random();
+        })
+        console.log(arr5);
+        */
+    </script>
+</head>
+<body>
+
+</body>
+</html>

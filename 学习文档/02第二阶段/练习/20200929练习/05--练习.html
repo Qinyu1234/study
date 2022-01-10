@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        window.onload=function () {
+            document.getElementById("btn01").onclick=function () {
+                //获取list的节点
+                let list=document.getElementById("list");
+                //  删除id为shs的元素
+                let shs=document.getElementById("shs");
+                //父节点.removeChild(删除的节点);  第一种
+               // list.removeChild(shs);
+                /*
+                第二种删除方法  这种方法不需要获取list父节点
+                    子节点.parentNode(父节点).removeChild(shs);
+                */
+               // shs.parentNode.removeChild(shs);
+                //第三种删除方法  自杀模式
+                shs.remove();
+            };
+        };
+    </script>
+</head>
+<body>
+<button id="btn01">按钮1</button>
+<button id="btn02">按钮2</button>
+<ul id="list">
+    <li>孙悟空</li>
+    <li>猪八戒</li>
+    <li id="shs">沙和尚</li>
+    <li>唐僧</li>
+</ul>
+
+</body>
+</html>

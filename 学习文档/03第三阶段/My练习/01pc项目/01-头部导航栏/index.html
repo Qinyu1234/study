@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body style="height: 2000px">
+<!--模拟body-->
+<div class="warp">
+    <!--头部-->
+    <div class="header">
+        <!--上边-->
+        <div class="top">
+            <!--头部主题框心朗-->
+            <div class="topMain">
+                <!--欢迎 登录注册-->
+                <div class="login">
+                    <p>欢迎来到尚品汇！ 请</p>
+                    <p class="loginBtn">
+                        <a href="##" class="btn1">登录</a>
+                        <a href="##">注册</a>
+                    </p>
+
+                </div>
+                <!--右侧导航栏-->
+                <div class="topNav">
+                    <a href="##">我的订单</a>
+                    <a href="##">我的购物车</a>
+                    <a href="##">我的尚品汇</a>
+                    <a href="##">尚品汇会员</a>
+                    <a href="##">企业采购</a>
+                    <a href="##">关注尚品汇</a>
+                    <a href="##">合作招商</a>
+                    <a href="##">商家后台</a>
+
+                </div>
+            </div>
+
+        </div>
+        <!--下部分-->
+        <div class="bottom">
+            <!--框心栏-->
+            <div class="bottomMain">
+                <!--logo-->
+                <div class="logo">
+                    <h1>
+                        <a href="##">
+                            <img src="images/Logo.png">
+                        </a>
+                    </h1>
+                </div>
+                <!--搜索框-->
+                <div class="search">
+                    <input type="text">
+                    <button>搜索</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--分类导航-->
+    <div class="typeNav">
+        <div class="navmain">
+            <h3>全部商品分类</h3>
+            <div>
+                <a href="##">服装城</a>
+                <a href="##">美妆馆</a>
+                <a href="##">商品会超市</a>
+                <a href="##">全球购</a>
+                <a href="##">闪购</a>
+                <a href="##">团购</a>
+                <a href="##">有趣</a>
+                <a href="##">秒杀</a>
+            </div>
+        </div>
+    </div>
+    <!--商品详情内容区-->
+    <div class="main">
+        <div class="maincon"><!--框心-->
+            <!--路径导航-->
+            <div class="conPoin">
+               <!-- <a href="##">手机、数码、通信</a>
+                <i>/</i>
+                <a href="##">手机</a>
+                <i>/</i>
+                <a href="##">Apple苹果</a>
+                <i>/</i>
+                <a>iphone 1000S系类</a>-->
+
+            </div>
+            <!--图片内容区域-->
+            <div class="infoWrap">
+                <!--图片内容区框心-->
+                <div class="previwWrap">
+                    <!--图片容器 previw放大镜  左侧-->
+                    <div class="previw">
+                        <!--有图片本身  图片的放大镜小框  放大图片框-->
+                        <div class="zoomImgBox">
+                            <!--小图片-->
+                            <img src="images/s1.png" alt="">
+                        </div>
+                    </div>
+                    <!--缩略图thumbnail  有左右的按钮 中间小图区域 小图区域有一个宽盒子装多个图片溢出隐藏-->
+                    <div class="thumbnail">
+                        <!--a表示按钮-->
+                        <a href="##" class="prev">&lt;</a>
+                        <!--中间小图片容器区域-->
+                        <div class="itemWrap">
+                            <!--图片多个  根据数据库返回结果创建img 有几个结果返回创建几个img-->
+                            <ul>
+                                <li>
+                                    <img src="images/s1.png" alt="">
+                                </li>
+                                <li>
+                                    <img src="images/s2.png" alt="">
+                                </li>
+                                <li>
+                                    <img src="images/s3.png" alt="">
+                                </li>
+                                <li>
+                                    <img src="images/s1.png" alt="">
+                                </li>
+                                <li>
+                                    <img src="images/s2.png" alt="">
+                                </li>
+                                <li>
+                                    <img src="images/s3.png" alt="">
+                                </li>
+                                <li>
+                                    <img src="images/s1.png" alt="">
+                                </li>
+                                <li>
+                                    <img src="images/s2.png" alt="">
+                                </li>
+                                <li>
+                                    <img src="images/s3.png" alt="">
+                                </li>
+                                <li>
+                                    <img src="images/s1.png" alt="">
+                                </li>
+                                <li>
+                                    <img src="images/s2.png" alt="">
+                                </li>
+                                <li>
+                                    <img src="images/s3.png" alt="">
+                                </li>
+                            </ul>
+                        </div>
+                        <a href="##" class="next">&gt;</a>
+                    </div>
+                    <!--右边的内容区-->
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<!--引入数据js文件-->
+<script src="js/data.js"></script>
+<script>
+    window.onload=function () {
+        //路径导航地址
+        conPoin();
+        function conPoin() {
+            //获取class为conPoin
+            conPoinNode=document.querySelector('.warp .main .maincon .conPoin');
+            //定义一个变量  将数据js文件中数组进行赋值
+            var path=goodData.path;//将数组赋值给path
+            //遍历数组  给每一个索引增加一个a标签和i   最后一个a标签不增加href i
+            for (let i=0;i<path.length;i++ ){
+                //创建一个a标签
+                var aNode=document.createElement('a');
+                if (i===path.length-1){
+                    //进入判断  证明是最后一个a  此时只增加标签  不增加href i标签
+                    aNode.innerHTML=path[i].title;//将数组中的title赋值给a标签内部
+                    conPoinNode.appendChild(aNode);//新建的a标签增加进conPoin中
+                }else {
+                    aNode.innerHTML=path[i].title;
+                    aNode.href=path[i].url;//设置a标签的href
+                    conPoinNode.appendChild(aNode);
+                    let iNode=document.createElement('i');//新建i标签
+                    iNode.innerHTML='/';//i标签的内部
+                    conPoinNode.appendChild(iNode);
+                }
+            }
+
+        }
+        //放大镜
+        //当鼠标移入zoomImgBox 新增一个div  鼠标要保持在div中位置不变 鼠标离开 div消失
+        //右侧要出现一个大div  里面放img标签
+        //创建一个鼠标移入事件
+        previw();
+        function previw() {
+            //获取到小图容器父元素  移动父元素时  蒙图出现
+            var previw=document.querySelector('.warp .main .maincon .infoWrap .previwWrap .previw');
+            //小图容器
+            var zoomImgBox=document.querySelector('.warp .main .maincon .infoWrap .previwWrap .previw .zoomImgBox');
+            //创建一个蒙版小div
+            var maskNode=null;
+            //创建一个大div装img的容器
+            var bigDivNode=null;
+            //创建一个img放图片
+            var imgNode=null;
+            //绑定一个鼠标移入事件
+            previw.onmouseenter=function () {
+            //判断是否是小div  大div  如果没有创建
+                if (!maskNode){
+                    //创建小图
+                    maskNode=document.createElement('div');
+                    maskNode.className='mask';
+                    zoomImgBox.appendChild(maskNode);
+
+                    //创建大图
+                    bigDivNode=document.createElement('div');
+                    bigDivNode.className='bigDiv';
+                    previw.appendChild(bigDivNode);
+                    //创建img
+                    imgNode=document.createElement('img');
+                    imgNode.src='./images/b1.png';
+                    bigDivNode.appendChild(imgNode);
+                }
+            }
+            //鼠标移入zoomImgBox事件  蒙图跟着鼠标移动
+            //1.蒙图跟着鼠标移动
+            //2.鼠标按下的坐标保持不变
+            zoomImgBox.onmousemove=function(event){
+                //兼容低版本浏览器
+                event=event || window.event;
+                //创建2个变量  获取鼠标移动的距离差  鼠标距离视口的坐标x-元素距离视口的left-蒙图自身宽度的一般
+                //getBoundingClientRect().left  可以获取元素距离视口最干净的距离  不受其他元素的影响
+
+                 var  left=event.clientX-previw.getBoundingClientRect().left-maskNode.offsetWidth/2;
+                 var  top=event.clientY-previw.getBoundingClientRect().top-maskNode.offsetHeight/2;
+
+                //判断盒子是否超出previw盒子
+                //蒙版的边界判断
+                //小于最小值=最小值  大于最大值=最大值  --范围限定类
+                //小于最小值=最大值  大于最大值=最小值  --收尾相接类  比如：轮播图
+
+                if (left<0){
+                    left=0;
+                }else if(left>previw.clientWidth-maskNode.offsetWidth){
+                    left=previw.clientWidth-maskNode.offsetWidth;
+                }
+                if (top<0){
+                    top=0;
+                }else if (top>previw.clientHeight-maskNode.offsetHeight){
+                    top=previw.clientHeight-maskNode.offsetHeight;
+                }
+                //设置蒙图maskNode的偏移量
+                maskNode.style.left=left+'px';
+                maskNode.style.top=top+'px';
+                //接下来修改大div中根据蒙图的位置移动  小div400宽度  大div800宽度
+                //计算移动的倍数  小div的可移动区域/大div的可移动区域
+                var scale=(previw.clientWidth-maskNode.offsetWidth)/(imgNode.offsetWidth-bigDivNode.clientWidth);
+                //console.log(scale);
+                //大div偏移量  左偏移量=鼠标的移动差/移动的倍数
+                var imgNodeLeft=left/scale;
+                var imgNodeTop=top/scale;
+                //设置img的偏移量
+                imgNode.style.left=-imgNodeLeft+'px';
+                imgNode.style.top=-imgNodeTop+'px';
+            }
+            //鼠标离开  删除小div  大div  img标签  清除移入事件
+            previw.onmouseleave=function () {
+                zoomImgBox.removeChild(maskNode);
+                previw.removeChild(bigDivNode);
+                //删除元素后重置蒙图为空
+                maskNode=null;
+                /*bigDivNode=null;
+                imgNode=null;*/
+                zoomImgBox.onmousemove = null;
+                previw.onmouseleave = null;
+            }
+        }
+        //缩略图
+        itemWrap();
+        function itemWrap() {
+            //点击下一张  上一张按钮时  会更改itemWrap中ul的left值 切换图片
+            //获取到按钮 ul  还有图片列表
+            let next=document.querySelector('.previwWrap .thumbnail .next');
+            let prevNode=document.querySelector('.previwWrap .thumbnail .prev');
+            let itemWrapUl=document.querySelector('.previwWrap .thumbnail .itemWrap ul');
+            //获取图片列表
+            let listimg=document.querySelectorAll('.previwWrap .thumbnail .itemWrap ul li');
+            //创建变量  每次移动的图片张数
+            let imgnum=2;
+            //创建变量  默认显示的张数
+            let showimg=5;
+            //创建变量  每次移动的宽度
+            let moveLeft=(listimg[0].offsetWidth+20)*imgnum;
+            //计算可移动宽度  总宽度-显示的宽度
+            let allLeft=(listimg.length-showimg)*(listimg[0].offsetWidth+20);
+            //创建一个变量 记录移动的宽度
+            let conleft=0;
+            next.onclick=function () {
+                //alert(123);
+                //移动的距离<剩余移动的距离
+                if (conleft<allLeft){
+                    //总的可移动宽度-移动的宽度>2个的宽度
+                    if (allLeft-conleft>moveLeft){
+                        conleft=conleft+moveLeft;
+                    }else {
+                        conleft=allLeft;
+                    }
+                    itemWrapUl.style.left=-conleft+'px';
+                }
+
+            }
+            prevNode.onclick=function () {
+                if (conleft>0){
+                    //当移动的距离>0时  证明已经点过下一张  此时可以点击上一张
+                    if (conleft>moveLeft){
+                        //移动的宽度大于每次移动的宽度  那么可以之间减去每次移动的宽度
+                        conleft=conleft-moveLeft;
+                    }else {
+                        conleft=0;
+                    }
+                    itemWrapUl.style.left=-conleft+'px';
+                }
+            }
+
+        }
+    }
+</script>
+
+</body>
+</html>

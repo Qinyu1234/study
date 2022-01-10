@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        /*
+        *   编写代码，对arr2进行从小到大排序
+        *       比较相邻位置的数字大小：如果前面的大于后面的，则两个互换位置
+        *   这种排序方式被称为冒泡排序，它是最好理解的排序方式
+        *       同时也是性能最差的排序方式
+        * */
+        let arr2 = [9,8,2,3,5,7,4,6,1];
+
+        for (let i=0;i<arr2.length-1;i++){//优化二：-1减少排序次数
+            //获取数组中所有的元素
+            //console.log(arr2[i]);
+            for (let a=0;a<arr2.length-1-i;a++){//优化一（-i） ：a<arr2.length-1-i
+                if (arr2[a]>arr2[a+1]){
+                    //相邻的元素比较，如果a大于a+1，则位置互换
+                    let k=arr2[a];//将a先存在变量k中
+                    arr2[a]=arr2[a+1];//将a+1赋值给a
+                    arr2[a+1]=k;//将k赋值给a+1
+
+                }
+            }
+            //console.log(arr2);//第一次将最大值9移到最后，第二次将8移到倒数2位置时，后面的8与9可以不比
+            //此时优化第一次，将比较的次数减少 a<arr2.length-1-i   -i为第一次最后一位不比  第二次最后2位不比
+            //二次优化在i处   比较的次数i<arr2.length  可以少比较一次  即在第8次比较的时，顺序对之后，最后一个数字不需要比，只有一个位置
+        }
+        console.log(arr2);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        /*
+        比较两个对象是否相等，无论是相等还是不相等，比较的都是对象的内存地址，不会做类型转化
+         */
+        let obj=Object();
+        obj.name='3';
+        let obj2=Object();
+        obj2.name=3;
+        console.log(obj===obj2);//比较的是两个变量的内存地址，false
+        //如果内存地址一样，则
+        let obj3=obj;
+        console.log(obj===obj3);//内存地址指向同一个，则相等为true
+    </script>
+</head>
+<body>
+
+</body>
+</html>

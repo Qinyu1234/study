@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        /*
+        let obj={
+            nema:"孙悟空",
+            return:function () {
+                console.log("我是对象中的函数");
+                console.log("我是对象中的函数");
+                console.log("我是对象中的函数");
+            },
+
+        };
+
+        console.log(obj.return());
+
+         */
+        let obj={
+            nema:"孙悟空",
+            fn:function () {
+                console.log("我是对象中的函数");
+                console.log("我是对象中的函数");
+                console.log("我是对象中的函数");
+            },
+            obj2:{
+                me:"nihao",
+                wo:{
+                    me:"ha哈",
+                    aa:function () {
+                        alert("你好")
+                    }
+                }
+            }
+
+
+
+        };
+        //obj.add="你好";
+        //obj.ed=true;
+        //delete obj.nema;
+
+        //for (let n in obj.obj2){
+           // console.log(n,'=',obj.obj2[n]);
+       // }
+        //console.log('ed' in obj);
+        obj.obj2.wo.aa();
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="div1" class="box">class为box的div1</div>
+<div id="div2" class="box">class为box的div2</div>
+<div id="div3">div3</div>
+<span class="box">class为box的span</span>
+<br/>
+<ul>
+    <li>AAAAAB</li>
+    <li title="hello">BBBBB</li>
+    <li class="box">CCCCC</li>
+    <li title="hello">DDDDDD</li>
+    <li title="two">BBBBB</li>
+    <li style="display:none">我本来是隐藏的</li>
+</ul>
+<script src="js/jquery-1.10.1.js" type="text/javascript"></script>
+<script>
+    //1. 选择第一个div
+     //   $('div:first').css('background','pink');
+    //2. 选择最后一个class为box的元素
+    //     $('div:last').css('background','pink');
+    //3. 选择所有class属性不为box的div
+    // $('div[class=box]').css('background','pink');
+    //4. 选择第二个和第三个li元素  索引为1 到3之间的li
+    //第一种  分开找 先找第二个  在找第三个
+        //$('li:eq(1)').css('background','pink');//找到第二个
+        //$('li:eq(2)').css('background','pink');//找到第三个
+    //第二种
+       // $('li:eq(1),li:eq(2)').css('background','pink')
+    //第三种  lt小于  gt大于  不含头尾  索引小于3大于0  就是取中间的1 2
+        //$('li:lt(3):gt(0)').css('background','pink');
+    //5. 选择内容为BBBBB的li  contains()  只要含有即可选择文本内容
+       // $('li:contains(BBBBB)').css('background','pink');//只要含有即可
+       // $('li:contains(B)').css('background','yellow');
+    //6. 选择隐藏的li   可见性选择器
+        //$('li:hidden').show(1000);
+     //   $('li:hidden').show(2000);//2s显示  show（）方法
+    //7. 选择有title属性的li元素
+       // $('li[title]').css('background','pink');
+    //8. 选择所有属性title为hello的li元素
+           // $('li[title=hello]').css('background','pink');
+    //9. 选择所有有title属性 且title属性不为hello的li元素
+            $('li[title][title!=hello]').css('background','pink');
+</script>
+
+</body>
+</html>

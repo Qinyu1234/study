@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    /*
+    search()
+        对字符串中查询是否含有指定内容  只能查询第一次出现位置的索引 没有返回-1
+    replace()
+        用新的内容替换字符串中原有的内容
+    split()
+        根据正则来拆分字符串
+    match()
+        根据正则提取字符串中符合条件的内容  比如提取电话号码
+    匹配模式
+        i表示忽略大小写
+        g表示全局
+     */
+    let str='fdgbdf13526945126fdgghb15624835124gfgdf156487gdg';
+    //创建正则
+    let re=/1[3-9][0-9]{9}/gi;//即在全局中查询正则 同时忽略大小写
+    //查询字符串中是否含有手机号码  只能查询第一次出现的索引
+    let result=str.search(/1[3-9][0-9]{9}/);
+        console.log(result);
+        result=str.replace(re,'哈哈');
+        console.log(result);
+        result=str.split(re);
+        console.log(result);
+        result=str.match(re);
+        console.log(result);
+
+</script>
+</body>
+</html>

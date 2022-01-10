@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        let arr=[9,8,6,7,5,3,1,4,2];
+        for (let a=0;a<arr.length-1;a++){
+            for (let i=0;i<arr.length-1-a;i++){
+                // 获取数组中所有的元素
+                //console.log(arr[i]);
+                if (arr[i]>arr[i+1]){
+                    //如果arr[i]>arr[i+1]  互换位置
+                    let k=arr[i];
+                    arr[i]=arr[i+1];
+                    arr[i+1]=k;
+                }
+            }
+        }
+
+        console.log(arr);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

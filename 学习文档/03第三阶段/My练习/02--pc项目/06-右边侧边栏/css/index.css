@@ -1,0 +1,822 @@
+.warp {
+  height: 100%;
+  position: relative;
+}
+.warp .asideRigth {
+  height: 100%;
+  width: 300px;
+  background: #7a6e6e;
+  position: fixed;
+  top: 0;
+  transition: 0.5s;
+}
+.warp .asideRigth.toolOpen {
+  right: 0;
+}
+.warp .asideRigth.toolOut {
+  right: -294px;
+}
+.warp .asideRigth .coolBtn {
+  width: 35px;
+  height: 35px;
+  position: absolute;
+  left: -29px;
+  top: 0;
+  cursor: pointer;
+}
+.warp .asideRigth .coolBtn.list {
+  background: #7a6e6e url(../images/list.png) no-repeat;
+  background-size: cover;
+}
+.warp .asideRigth .coolBtn.cross {
+  background: #7a6e6e url(../images/cross.png) no-repeat;
+  background-size: cover;
+}
+.warp .asideRigth .coolContent {
+  width: 294px;
+  height: 100%;
+  position: absolute;
+  left: 6px;
+  top: 0;
+  background: bisque;
+  z-index: 9;
+}
+.warp .asideRigth .coolList {
+  position: absolute;
+  transform: translateY(-50%);
+  top: 50%;
+  left: -29px;
+}
+.warp .asideRigth .coolList li {
+  width: 35px;
+  height: 35px;
+  position: relative;
+  z-index: 3;
+}
+.warp .asideRigth .coolList li i {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #7a6e6e url(../images/toolbars.png) -87px -174px no-repeat;
+}
+.warp .asideRigth .coolList li em {
+  width: 62px;
+  height: 35px;
+  position: absolute;
+  left: 35px;
+  top: 0;
+  transition: 0.5s;
+  color: #fff;
+  text-align: center;
+  line-height: 35px;
+  background: pink;
+}
+.warp .asideRigth .coolList li:hover i {
+  background: pink url(../images/toolbars.png) -87px -174px no-repeat;
+}
+.warp .asideRigth .coolList li:hover em {
+  left: -62px;
+}
+.warp .asideRigth .callBack {
+  position: absolute;
+  left: -35px;
+  bottom: 0;
+  height: 35px;
+  width: 35px;
+  z-index: 9;
+}
+.warp .asideRigth .callBack i {
+  width: 100%;
+  height: 100%;
+  background: #7a6e6e url(../images/toolbars.png) -50px -250px no-repeat;
+  position: absolute;
+  left: 6px;
+}
+.warp .asideRigth .callBack em {
+  width: 62px;
+  height: 35px;
+  position: absolute;
+  left: 6px;
+  top: 0;
+  transition: 0.5s;
+  line-height: 35px;
+  text-align: center;
+  color: #fff;
+}
+.warp .asideRigth .callBack em a {
+  color: #fff;
+  text-decoration: none;
+}
+.warp .asideRigth .callBack:hover i {
+  background: pink url(../images/toolbars.png) -50px -250px no-repeat;
+}
+.warp .asideRigth .callBack:hover em {
+  left: -56px;
+  background: pink;
+}
+.warp .header {
+  width: 100%;
+}
+.warp .header .top {
+  width: 100%;
+  height: 30px;
+  background: #eaeaea;
+}
+.warp .header .top .topMain {
+  width: 1200px;
+  height: 30px;
+  line-height: 30px;
+  margin: 0 auto;
+}
+.warp .header .top .topMain .login {
+  height: 30px;
+  float: left;
+}
+.warp .header .top .topMain .login p {
+  float: left;
+}
+.warp .header .top .topMain .login p .btn1 {
+  margin-left: 3px;
+  padding-right: 5px;
+  border-right: 1px solid #b3aeae;
+}
+.warp .header .top .topMain .topNav {
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  /*background: #1d92ff;*/
+  float: right;
+}
+.warp .header .top .topMain .topNav a {
+  padding: 0 10px;
+}
+.warp .header .top .topMain .topNav a + a {
+  border-left: 1px solid #b3aeae;
+}
+.warp .header .bottom .bottomMain {
+  width: 1200px;
+  margin: 0 auto;
+  *zoom: 1;
+}
+.warp .header .bottom .bottomMain::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+.warp .header .bottom .bottomMain .logo {
+  margin: 25px 45px;
+  float: left;
+}
+.warp .header .bottom .bottomMain .logo img {
+  width: 175px;
+  height: 56px;
+}
+.warp .header .bottom .bottomMain .search {
+  float: right;
+  margin-top: 35px;
+}
+.warp .header .bottom .bottomMain .search input {
+  width: 490px;
+  height: 32px;
+  padding: 0 4px;
+  box-sizing: border-box;
+  border: 2px solid #ea4a36;
+  float: left;
+  outline: none;
+}
+.warp .header .bottom .bottomMain .search button {
+  width: 68px;
+  height: 32px;
+  background: #ea4a36;
+  color: #fff;
+  float: left;
+  outline: none;
+  border: none;
+}
+.warp .typeNav {
+  border-bottom: 2px solid #e1251b;
+}
+.warp .typeNav .navmain {
+  width: 1200px;
+  margin: 0 auto;
+  *zoom: 1;
+}
+.warp .typeNav .navmain::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+.warp .typeNav .navmain h3 {
+  float: left;
+  width: 210px;
+  height: 50px;
+  background-color: #e1251b;
+  color: #fff;
+  font-size: 14px;
+  line-height: 50px;
+  text-align: center;
+}
+.warp .typeNav .navmain div {
+  float: left;
+  font-size: 16px;
+  color: #fff;
+  line-height: 50px;
+}
+.warp .typeNav .navmain div a {
+  margin: 0 22px;
+}
+.warp .main .maincon {
+  width: 1200px;
+  margin: 15px auto 0;
+}
+.warp .main .maincon .conPoin {
+  padding: 9px 15px 9px 0;
+}
+.warp .main .maincon .conPoin i {
+  color: #ccc;
+  margin: 0 3px;
+}
+.warp .main .maincon .infoWrap {
+  width: 100%;
+  margin-top: 15px;
+  *zoom: 1;
+}
+.warp .main .maincon .infoWrap::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+.warp .main .maincon .infoWrap .previwWrap {
+  width: 400px;
+  float: left;
+}
+.warp .main .maincon .infoWrap .previwWrap .previw {
+  width: 400px;
+  height: 400px;
+  margin: 5px 0 15px;
+  border: 1px solid #dfdfdf;
+  position: relative;
+}
+.warp .main .maincon .infoWrap .previwWrap .previw .zoomImgBox {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.warp .main .maincon .infoWrap .previwWrap .previw .zoomImgBox img {
+  width: 400px;
+  height: 400px;
+}
+.warp .main .maincon .infoWrap .previwWrap .previw .zoomImgBox .mask {
+  width: 200px;
+  height: 200px;
+  background: rgba(255, 255, 255, 0.5);
+  border: 1px solid #ddd;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.warp .main .maincon .infoWrap .previwWrap .previw .bigDiv {
+  width: 400px;
+  height: 400px;
+  position: absolute;
+  left: 420px;
+  top: 0;
+  border: 1px solid #ddd;
+  overflow: hidden;
+}
+.warp .main .maincon .infoWrap .previwWrap .previw .bigDiv img {
+  width: 800px;
+  height: 800px;
+}
+.warp .main .maincon .infoWrap .previwWrap .thumbnail {
+  width: 400px;
+  margin-top: 5px;
+  *zoom: 1;
+}
+.warp .main .maincon .infoWrap .previwWrap .thumbnail::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+.warp .main .maincon .infoWrap .previwWrap .thumbnail a {
+  float: left;
+  width: 10px;
+  height: 54px;
+  border: 1px solid #ccc;
+  background: #ebebeb;
+  line-height: 54px;
+  text-align: center;
+}
+.warp .main .maincon .infoWrap .previwWrap .thumbnail a.prev {
+  margin-right: 4px;
+}
+.warp .main .maincon .infoWrap .previwWrap .thumbnail .itemWrap {
+  float: left;
+  width: 372px;
+  height: 56px;
+  overflow: hidden;
+  position: relative;
+}
+.warp .main .maincon .infoWrap .previwWrap .thumbnail .itemWrap ul {
+  width: 9999px;
+  height: 50px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: 0.5s;
+}
+.warp .main .maincon .infoWrap .previwWrap .thumbnail .itemWrap ul li {
+  width: 50px;
+  height: 50px;
+  float: left;
+  border: 1px solid #ccc;
+  padding: 2px;
+  margin-right: 20px;
+}
+.warp .main .maincon .infoWrap .previwWrap .thumbnail .itemWrap ul li img {
+  width: 100%;
+  height: 100%;
+}
+.warp .main .maincon .infoWrap .priceScreen {
+  float: right;
+}
+.warp .main .maincon .infoWrap .priceScreen .priceTop {
+  width: 700px;
+  border-bottom: 1px solid #ededed;
+  padding-bottom: 5px;
+}
+.warp .main .maincon .infoWrap .priceScreen .priceTop .top p {
+  font-size: 14px;
+  line-height: 21px;
+  margin: 15px 0;
+  font-weight: bold;
+}
+.warp .main .maincon .infoWrap .priceScreen .priceTop .top span {
+  color: #e12228;
+}
+.warp .main .maincon .infoWrap .priceScreen .priceTop .center {
+  background: #fee9ec;
+  padding: 7px;
+  margin-top: 10px;
+}
+.warp .main .maincon .infoWrap .priceScreen .priceTop .center .jiage {
+  line-height: 28px;
+  *zoom: 1;
+}
+.warp .main .maincon .infoWrap .priceScreen .priceTop .center .jiage::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+.warp .main .maincon .infoWrap .priceScreen .priceTop .center .jiage p {
+  float: left;
+}
+.warp .main .maincon .infoWrap .priceScreen .priceTop .center .jiage .bbb {
+  float: left;
+  text-align: center;
+  margin-left: 10px;
+}
+.warp .main .maincon .infoWrap .priceScreen .priceTop .center .jiage .bbb em {
+  color: #cc1122;
+  font-size: 16px;
+}
+.warp .main .maincon .infoWrap .priceScreen .priceTop .center .jiage .bbb span {
+  color: #cc1122;
+  font-size: 24px;
+}
+.warp .main .maincon .infoWrap .priceScreen .priceTop .center .jiage .bbb i {
+  font-size: 12px;
+  color: #cc1122;
+}
+.warp .main .maincon .infoWrap .priceScreen .priceTop .center .jiage .rrr {
+  float: right;
+}
+.warp .main .maincon .infoWrap .priceScreen .priceTop .center .cuxiao {
+  position: relative;
+  *zoom: 1;
+}
+.warp .main .maincon .infoWrap .priceScreen .priceTop .center .cuxiao::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+.warp .main .maincon .infoWrap .priceScreen .priceTop .center .cuxiao p {
+  float: left;
+  margin-right: 10px;
+  margin-top: 5px;
+}
+.warp .main .maincon .infoWrap .priceScreen .priceTop .center .cuxiao div {
+  float: left;
+  width: 520px;
+}
+.warp .main .maincon .infoWrap .priceScreen .priceTop .center .cuxiao div i {
+  background: #c81623;
+  padding: 0 3px;
+  color: #fff;
+}
+.warp .main .maincon .infoWrap .priceScreen .priceTop .center .cuxiao div span {
+  margin-top: 10px;
+  line-height: 28px;
+  color: #999;
+}
+.warp .main .maincon .infoWrap .priceScreen .priceTop .bottom div {
+  *zoom: 1;
+  margin-top: 15px;
+  margin-left: 7px;
+  line-height: 28px;
+}
+.warp .main .maincon .infoWrap .priceScreen .priceTop .bottom div::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+.warp .main .maincon .infoWrap .priceScreen .priceTop .bottom div p {
+  float: left;
+  margin-right: 10px;
+}
+.warp .main .maincon .infoWrap .priceScreen .priceTop .bottom div span {
+  float: left;
+  color: #999;
+}
+.warp .main .maincon .infoWrap .priceScreen .screenBottom .cloose {
+  margin-top: 10px;
+  line-height: 28px;
+}
+.warp .main .maincon .infoWrap .priceScreen .screenBottom .cloose mark {
+  background: snow;
+  border: 1px solid #ddd;
+  padding: 10px 20px;
+  margin-right: 20px;
+}
+.warp .main .maincon .infoWrap .priceScreen .screenBottom .cloose span {
+  color: red;
+  margin-left: 20px;
+  font-size: 14px;
+}
+.warp .main .maincon .infoWrap .priceScreen .screenBottom dl {
+  *zoom: 1;
+  margin-top: 10px;
+  line-height: 28px;
+}
+.warp .main .maincon .infoWrap .priceScreen .screenBottom dl::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+.warp .main .maincon .infoWrap .priceScreen .screenBottom dl dt {
+  float: left;
+  margin-right: 15px;
+  text-align: center;
+}
+.warp .main .maincon .infoWrap .priceScreen .screenBottom dl dd {
+  float: left;
+  margin-right: 5px;
+  color: #666;
+  line-height: 24px;
+  padding: 2px 14px;
+  border-top: 1px solid #eee;
+  border-left: 1px solid #eee;
+  border-right: 1px solid #bbb;
+  border-bottom: 1px solid #bbb;
+}
+.warp .main .maincon .infoWrap .priceScreen .screenBottom dl dd:nth-of-type(1) {
+  color: red;
+}
+.warp .main .maincon .infoWrap .priceScreen .control {
+  *zoom: 1;
+  margin-top: 15px;
+}
+.warp .main .maincon .infoWrap .priceScreen .control::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+.warp .main .maincon .infoWrap .priceScreen .control .num {
+  float: left;
+  width: 55px;
+  margin-right: 15px;
+  position: relative;
+}
+.warp .main .maincon .infoWrap .priceScreen .control .num input {
+  width: 38px;
+  height: 37px;
+  border: 1px solid #ddd;
+  color: #555;
+  outline: none;
+  text-align: center;
+}
+.warp .main .maincon .infoWrap .priceScreen .control .num p {
+  position: absolute;
+  width: 15px;
+  height: 18px;
+  background: #f1f1f1;
+  color: #666;
+  text-align: center;
+  line-height: 18px;
+  border: 1px solid #dddddd;
+}
+.warp .main .maincon .infoWrap .priceScreen .control .num p:nth-of-type(1) {
+  left: 39px;
+  top: 0;
+}
+.warp .main .maincon .infoWrap .priceScreen .control .num p:nth-of-type(2) {
+  left: 39px;
+  top: 19px;
+}
+.warp .main .maincon .infoWrap .priceScreen .control button {
+  float: left;
+  height: 36px;
+  padding: 0 25px;
+  font-size: 14px;
+  color: #fff;
+  background: #e1251b;
+  border: none;
+  outline: none;
+}
+.warp .main .maincon .detailWrap {
+  width: 1200px;
+  margin-top: 30px;
+  *zoom: 1;
+}
+.warp .main .maincon .detailWrap::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+.warp .main .maincon .detailWrap .detail {
+  float: left;
+  width: 210px;
+  border: 1px solid #ccc;
+  *zoom: 1;
+}
+.warp .main .maincon .detailWrap .detail::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+.warp .main .maincon .detailWrap .detail .detailTop h4 {
+  border-top: 1px solid #fff;
+  float: left;
+  width: 105px;
+  line-height: 37px;
+  text-align: center;
+  border-bottom: 1px solid #ccc;
+  border-top: 3px solid #fff;
+}
+.warp .main .maincon .detailWrap .detail .detailTop h4.active {
+  border-top: 3px solid #e1251b;
+  border-bottom: 1px solid #fff;
+}
+.warp .main .maincon .detailWrap .detail .detailButtom {
+  padding: 10px;
+}
+.warp .main .maincon .detailWrap .detail .detailButtom > div {
+  display: none;
+}
+.warp .main .maincon .detailWrap .detail .detailButtom > div.active {
+  display: block;
+}
+.warp .main .maincon .detailWrap .detail .detailButtom ul {
+  *zoom: 1;
+}
+.warp .main .maincon .detailWrap .detail .detailButtom ul::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+.warp .main .maincon .detailWrap .detail .detailButtom ul li {
+  float: left;
+  width: 50%;
+  border-bottom: 1px dashed #ededed;
+  line-height: 28px;
+}
+.warp .main .maincon .detailWrap .detail .detailButtom .goodsList {
+  margin: 5px 0 15px;
+  border-bottom: 1px solid #ededed;
+}
+.warp .main .maincon .detailWrap .detail .detailButtom .goodsList div {
+  text-align: center;
+}
+.warp .main .maincon .detailWrap .detail .detailButtom .goodsList div img {
+  width: 152px;
+}
+.warp .main .maincon .detailWrap .detail .detailButtom .goodsList i {
+  color: #c81623;
+  font-size: 16px;
+}
+.warp .main .maincon .detailWrap .detail .detailButtom .goodsList .carBox {
+  margin: 5px 0;
+}
+.warp .main .maincon .detailWrap .detail .detailButtom .goodsList .carBox a {
+  border: 1px solid #8c8c8c;
+  color: #8c8c8c;
+  padding: 2px 14px;
+  line-height: 18px;
+}
+.warp .main .maincon .detailWrap .detailRight {
+  float: right;
+  width: 980px;
+}
+.warp .main .maincon .detailWrap .detailRight > .top {
+  height: 40px;
+  background: #ededed;
+}
+.warp .main .maincon .detailWrap .detailRight > .top ul li {
+  float: left;
+  border: 1px solid #ddd;
+  border-right: none;
+  background: #fff;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  padding: 0 11px;
+  box-sizing: border-box;
+}
+.warp .main .maincon .detailWrap .detailRight > .top ul li.active {
+  background: #e1251b;
+}
+.warp .main .maincon .detailWrap .detailRight > .top ul li.active a {
+  color: #fff;
+}
+.warp .main .maincon .detailWrap .detailRight .center > div {
+  display: none;
+}
+.warp .main .maincon .detailWrap .detailRight .center > div.active {
+  display: block;
+}
+.warp .main .maincon .detailWrap .detailRight .center > div ul li {
+  margin: 10px 0;
+}
+.warp .main .maincon .detailWrap .detailRight .choice {
+  border: 1px solid #ddd;
+  margin-bottom: 15px;
+}
+.warp .main .maincon .detailWrap .detailRight .choice .top {
+  border-bottom: 1px solid #ddd;
+  background: #f1f1f1;
+  color: #333;
+  padding: 5px 0 5px 15px;
+  font-weight: bold;
+}
+.warp .main .maincon .detailWrap .detailRight .choice .bottom {
+  height: 170px;
+  padding-top: 10px;
+}
+.warp .main .maincon .detailWrap .detailRight .choice .bottom .phone {
+  float: left;
+  width: 127px;
+  height: 165px;
+  position: relative;
+  text-align: center;
+}
+.warp .main .maincon .detailWrap .detailRight .choice .bottom .phone img {
+  width: 87px;
+}
+.warp .main .maincon .detailWrap .detailRight .choice .bottom .phone p {
+  color: #c81623;
+  font-size: 16px;
+}
+.warp .main .maincon .detailWrap .detailRight .choice .bottom .phone i {
+  position: absolute;
+  top: 48px;
+  right: -25px;
+  font-size: 16px;
+}
+.warp .main .maincon .detailWrap .detailRight .choice .bottom ul {
+  width: 668px;
+  height: 165px;
+  float: left;
+  text-align: center;
+}
+.warp .main .maincon .detailWrap .detailRight .choice .bottom ul li {
+  float: left;
+  width: 127px;
+  margin: 0 20px;
+}
+.warp .main .maincon .detailWrap .detailRight .choice .bottom ul li img {
+  width: 120px;
+  height: 130px;
+}
+.warp .main .maincon .detailWrap .detailRight .choice .bottom .result {
+  float: left;
+  border-left: 1px solid #ddd;
+  width: 153px;
+  height: 165px;
+  padding-left: 20px;
+}
+.warp .main .maincon .detailWrap .detailRight .choice .bottom .result p {
+  margin: 10px 0;
+}
+.warp .main .maincon .detailWrap .detailRight .choice .bottom .result h4 {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.warp .main .maincon .detailWrap .detailRight .choice .bottom .result span {
+  color: #B1191A;
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+.warp .main .maincon .detailWrap .detailRight .choice .bottom .result button {
+  padding: 10px 25px;
+  color: #fff;
+  font-size: 16px;
+  background: #e1251b;
+  border: none;
+  outline: none;
+  margin-top: 10px;
+}
+.warp .loveWrap {
+  width: 1198px;
+  margin: 0 auto;
+  border: 1px solid #ddd;
+}
+.warp .loveWrap .love > div {
+  border-bottom: 1px solid #ddd;
+  color: #333;
+  padding: 5px 10px;
+  background: #f1f1f1;
+  font-weight: bold;
+}
+.warp .loveWrap .love ul {
+  /*padding: 15px 11px;*/
+  *zoom: 1;
+}
+.warp .loveWrap .love ul::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+.warp .loveWrap .love ul li {
+  width: 196px;
+  float: left;
+}
+.warp .loveWrap .love ul li a {
+  display: block;
+  padding: 0 15px;
+  text-decoration: none;
+}
+.warp .loveWrap .love ul li a img {
+  width: 167px;
+  height: 123px;
+}
+.warp .loveWrap .love ul li a p {
+  width: 100%;
+  padding: 0 15px;
+}
+.warp .loveWrap .love ul li a p:nth-of-type(2) {
+  margin: 15px 0;
+}
+.warp .loveWrap .love ul li a span {
+  padding: 0 15px;
+  font-size: 16px;
+  color: #c81623;
+}
+.warp .footerWrap {
+  width: 100%;
+  background: #eaeaea;
+  margin-top: 15px;
+  /*position: absolute;
+    left: 0;
+    bottom: 0;*/
+}
+.warp .footerWrap .footer {
+  width: 1200px;
+  margin: 0 auto;
+}
+.warp .footerWrap .footer .hand {
+  padding: 20px;
+  border-bottom: 1px solid #e4e1e1;
+  display: flex;
+  justify-content: space-around;
+}
+.warp .footerWrap .footer .hand ul li {
+  margin-top: 5px;
+}
+.warp .footerWrap .footer .hand ul li:nth-of-type(1) {
+  font-size: 14px;
+  font-weight: bold;
+}
+.warp .footerWrap .footer .hand div h4 {
+  font-size: 14px;
+}
+.warp .footerWrap .footer .about {
+  text-align: center;
+  padding: 20px;
+}
+.warp .footerWrap .footer .about ul {
+  display: flex;
+  justify-content: center;
+}
+.warp .footerWrap .footer .about ul li:nth-of-type(1) a {
+  border-left: none;
+}
+.warp .footerWrap .footer .about ul li a {
+  padding: 0 15px;
+  border-left: 1px solid #4c4c4c;
+}
+.warp .footerWrap .footer .about p {
+  margin-top: 15px;
+}
+/*# sourceMappingURL=index.css.map */

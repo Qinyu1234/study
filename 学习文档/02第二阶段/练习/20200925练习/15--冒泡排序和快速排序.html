@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        /*
+        冒泡排序--对数组中数字进行从大到小排
+         */
+        let arr=[9,7,5,6,3,4,2,8,1];
+        for (let i=0;i<arr.length;i++){
+            //遍历数组
+            for (let j=0;j<arr.length-1;j++){
+                if (arr[j]>arr[j+1]){
+                    let t=arr[j];
+                    arr[j]=arr[j+1];
+                    arr[j+1]=t;
+
+                }
+            }
+
+        }
+        console.log(arr);
+        //sort（）快速排序
+        arr.sort(function (a,b) {
+            return a-b;//从小到大
+            //return b-a;//从大到小排
+        })
+        console.log(arr);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

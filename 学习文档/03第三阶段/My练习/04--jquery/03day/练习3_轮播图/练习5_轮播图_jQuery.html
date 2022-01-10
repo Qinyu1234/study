@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>焦点轮播图</title>
+	<style type="text/css">
+		/*去除内边距,没有链接下划线*/
+		* {
+			margin: 0;
+			padding: 0;
+			text-decoration: none;
+		}
+		/*让<body有20px的内边距*/
+		body {
+			padding: 20px;
+		}
+		/*最外围的div*/
+		#container {
+			width: 600px;
+			height: 400px;
+			overflow: hidden;
+			position: relative;/*相对定位*/
+			margin: 0 auto;
+		}
+		/*包含所有图片的<div>*/
+
+		#list {
+			width: 4200px; /*7张图片的宽: 7*600 */
+			height: 400px;
+			position: absolute; /*绝对定位*/
+			z-index: 1;
+
+		}
+		/*所有的图片<img>*/
+		#list img {
+			float: left;/*浮在左侧*/
+		}
+		/*包含所有圆点按钮的<div>*/
+		#pointsDiv {
+			position: absolute;
+			height: 10px;
+			width: 100px;
+			z-index: 2;
+			bottom: 20px;
+			left: 250px;
+		}
+		/*所有的圆点<span>*/
+
+		#pointsDiv span {
+			cursor: pointer;
+			float: left;
+			border: 1px solid #fff;
+			width: 10px;
+			height: 10px;
+			border-radius: 50%;
+			background: #333;
+			margin-right: 5px;
+		}
+		/*第一个<span>*/
+
+		#pointsDiv .on {
+			background: orangered;
+		}
+		/*切换图标<a>*/
+
+		.arrow {
+			cursor: pointer;
+			display: none;
+			line-height: 39px;
+			text-align: center;
+			font-size: 36px;
+			font-weight: bold;
+			width: 40px;
+			height: 40px;
+			position: absolute;
+			z-index: 2;
+			top: 180px;
+			background-color: RGBA(0, 0, 0, 0.3);
+			color: #fff;
+		}
+		/*鼠标移到切换图标上时*/
+		.arrow:hover {
+			background-color: RGBA(0, 0, 0, 0.7);
+		}
+		/*鼠标移到整个div区域时*/
+		#container:hover .arrow {
+			display: block;/*显示*/
+		}
+		/*上一个切换图标的左外边距*/
+		#prev {
+			left: 20px;
+		}
+		/*下一个切换图标的右外边距*/
+		#next {
+			right: 20px;
+		}
+	</style>
+</head>
+
+<body>
+
+	<div id="container">
+		<div id="list" style="left: -600px;">
+			<img src="img/5.jpg" alt="5" />
+			<img src="img/1.jpg" alt="1" />
+			<img src="img/2.jpg" alt="2" />
+			<img src="img/3.jpg" alt="3" />
+			<img src="img/4.jpg" alt="4" />
+			<img src="img/5.jpg" alt="5" />
+			<img src="img/1.jpg" alt="1" />
+		</div>
+		<div id="pointsDiv">
+			<span index="1" class="on"></span>
+			<span index="2"></span>
+			<span index="3"></span>
+			<span index="4"></span>
+			<span index="5"></span>
+		</div>
+		<a href="javascript:;" id="prev" class="arrow">&lt;</a>
+		<a href="javascript:;" id="next" class="arrow">&gt;</a>
+	</div>
+
+	<script src="./js/jquery.1.10.2.js"></script>
+	<script type="text/javascript">
+		/*
+		 功能说明:
+			 1. 点击向右(左)的图标, 平滑切换到下(上)一页
+			 2. 无限循环切换
+			 3. 每隔3s自动滑动到下一页
+			 4. 鼠标进入停止自动翻页, 移出开启自动翻页
+			 5. 切换页面时, 下面的圆点也同步更新
+			 6. 点击圆点图标切换到对应的页
+		 */
+		$(function () {
+			//获取按钮  小圆点  图片容器
+			var $list = $('#list');
+			var $prev = $('#prev');
+			var $next = $('#next');
+			var imgWidth = 600;
+			var timeAll = 3000;
+			var time = 30;
+			var $pointsDiv=$('#pointsDiv span');
+			var showImg=$pointsDiv.length;
+			var currIndex=0;
+			//当图片在移动过程中  点击按钮或小圆点会根据当前鼠标点击的left
+			//去计算offset  造成图片移动一半一半的bug  故应设置为在移动过程中  点击按钮或小圆点不执行
+			//设置变量标志  默认图片不移动
+			var isMoving=false;
+			//console.log(showImg);
+			//点击按钮
+			$prev.click(function () {
+				pageClick(false)
+			})
+			$next.click(function () {
+				pageClick(true)
+			})
+			//点击圆点函数
+			$pointsDiv.click(function () {
+				var targetIndex=$(this).index();
+				//console.log(targetIndex);
+				pageClick(targetIndex);
+			})
+			//设置自动播放
+			var autoplay=setInterval(function () {
+				pageClick(true);
+			},1000)
+			//当鼠标移入时  取消自动播放  移出时   自动播放  获取盒子父容器
+			var $container = $('#container');
+			$container.hover(function () {
+				clearInterval(autoplay);
+			},function () {
+				autoplay=setInterval(function () {
+					pageClick(true);
+				},1000)
+			})
+
+			function pageClick(next) {
+				//判断图片如果在移动过程中  则不执行下面代码
+				if (isMoving){
+					return
+				}
+				isMoving = true;
+				//判断点击的是按钮还是小圆点
+				if (typeof next == 'boolean'){
+					var offset = next ? -imgWidth : imgWidth;
+				}else {
+					var offset = -(next-currIndex) * imgWidth;
+				}
+
+				var left = $list.position().left;
+				//每次移动距离
+				var  itemLeft = offset / (timeAll / time);
+				//移动后的位置
+				var targetLeft = left+offset;
+				//开启循环
+				var tims=setInterval(function () {
+					left += itemLeft;
+					if (left==targetLeft){
+						clearInterval(tims);
+						isMoving = false;
+						//边界值判断
+						if (left==0){
+							left = -showImg * imgWidth;
+						}else if (left == -(showImg+1) * imgWidth){
+							left = -imgWidth
+						}
+					}
+					$list.css('left',left);
+				},time)
+
+				upDate(next)
+			}
+			//小圆点切换
+			function upDate(next) {
+				//判断类型
+				if (typeof next == 'boolean'){
+					var index = next ? currIndex+1 : currIndex-1;
+				}else {
+					var index = next;
+				}
+
+			//临界值判断
+				if (index < 0){
+					index = $pointsDiv.length-1
+				}else if (index > $pointsDiv.length-1){
+					index = 0;
+				}
+				$pointsDiv.eq(index).addClass('on');
+				$pointsDiv.eq(currIndex).removeClass('on');
+				currIndex=index;
+			}
+
+		})
+	</script>
+</body>
+
+</html>

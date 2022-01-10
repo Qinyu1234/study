@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+            height: 3000px;
+        }
+        #box1{
+            width: 100px;
+            height: 100px;
+            background: tomato;
+            position: relative;
+        }
+    </style>
+
+</head>
+<body>
+<div id="box1"></div>
+<script>
+    /*
+    描述：当鼠标移入时，box1会根据鼠标的坐标移动
+     */
+    //先获取box1
+    let box1=document.getElementById("box1");
+    //给网页设置鼠标移入事件
+    document.onmousemove=function (event) {
+        //获取网页的坐标
+        let x=event.clientX;
+        let y=event.clientY;
+        //将鼠标移入网页的坐标时，将坐标与box1的偏移量设置为一致，box1会跟着鼠标一块动
+        //设置box1的偏移量
+        box1.style.left=x+document.documentElement.scrollLeft+'px';
+        box1.style.top=y+document.documentElement.scrollTop+'px';
+
+    };
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        /*
+            解构赋值
+            1、将数组中的元素赋值给变量
+            2、将数组中的元素拆分做为函数的元素传递
+            3、对对象的解构
+         */
+        let arr=[10,20,30,40];
+        /*
+        let [a,b,...c]=arr;
+        console.log("a=",a);//将数组中的元素赋值给变量a  b  ...c代表剩余参数，将ab一一对应后的参数剩下的给c
+        console.log("b=",b);
+        console.log("c=",c);
+        //将数组中的元素作为参数传递给函数
+        function fn(a,b,c) {
+            return a+b+c
+        }
+        fn(arr);
+        console.log(fn(...arr));
+
+         */
+        //元素互换位置:相当于数组中将索引为1和2的位置互换，将索引为2的赋值给1  将1的位置赋值给2   后面的赋值给前面的
+        [arr[1],arr[2]]=[arr[2],arr[1]];
+        console.log(arr);
+        //对对象拆分
+        let obj={name:'孙悟空', age:18, gender:'男'}
+        let {name,age}=obj;
+        console.log(name,age);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

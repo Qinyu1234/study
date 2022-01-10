@@ -1,0 +1,135 @@
+│  My练习.rar
+│  react全家桶_stu_资料.rar
+│  
+├─1-React框架
+│  │  代码.zip
+│  │  
+│  ├─day01-video
+│  │      1.react的简介.mp4
+│  │      2.react的特点.mp4
+│  │      3.hello_react.mp4
+│  │      4.两种创建虚拟DOM的方式.mp4
+│  │      5.虚拟DOM与真实DOM.mp4
+│  │      6.jsx的语法规则.mp4
+│  │      7.jsx的小练习.mp4
+│  │      
+│  ├─day02-video
+│  │      1.复习.mp4
+│  │      2.模块化与组件化的理解.mp4
+│  │      3.react开发者工具的使用.mp4
+│  │      4.react中定义函数式组件.mp4
+│  │      5.复习ES6中的类.mp4
+│  │      6.react中定义类式组件.mp4
+│  │      7.组件实例三大属性之1_state(1).mp4
+│  │      8.类式组件中自定义方法this丢失的问题.mp4
+│  │      9.组件实例三大属性之2_state(2).mp4
+│  │      10.state的简写方式.mp4
+│  │      11.组件实例三大属性之3_props.mp4
+│  │      12.对props进行限制.mp4
+│  │      13.函数式组件使用props.mp4
+│  │      
+│  └─day03-video
+│          1.复习.mp4
+│          2.字符串形式的ref.mp4
+│          3.回调形式的ref.mp4
+│          4.createRef的使用.mp4
+│          5.react中的事件处理.mp4
+│          6.非受控组件.mp4
+│          7.受控组件.mp4
+│          8.高阶函数_函数的柯里化.mp4
+│          9.不使用柯里化去实现.mp4
+│          10.关于类式组件中的构造器.mp4
+│          11.引出生命周期.mp4
+│          12.验证react生命周期钩子(旧).mp4
+│          13.组件间关系的说明.mp4
+│          14.总结生命周期(旧).mp4
+│          15.新生命周期的UNSAFE前缀.mp4
+│          
+├─2-React-脚手架
+│  │  源码文档.zip
+│  │  
+│  ├─day04-video
+│  │      1.复习.mp4
+│  │      2.getDerivedStateFromProps.mp4
+│  │      3.getDerivedStateFromProps.mp4
+│  │      4.getSnapshotBeforeUpdate的使用场景.mp4
+│  │      5.总结生命周期.mp4
+│  │      6.验证Diffing算法的存在.mp4
+│  │      7.Diffing算法的原理.mp4
+│  │      8.create-react-app的使用.mp4
+│  │      9.react脚手架文件分析.mp4
+│  │      10.一个简单的Hello组件.mp4
+│  │      11.todolist案例_拆分静态组件.mp4
+│  │      12.todolist案例_初始化列表展示.mp4
+│  │      
+│  ├─day05-案例-video
+│  │      1.复习.mp4
+│  │      2.todolist案例_添加一个todo.mp4
+│  │      3.todolist案例_勾选一个todo.mp4
+│  │      4.todolist案例_鼠标悬浮高亮效果.mp4
+│  │      5.todolist案例_删除一个todo.mp4
+│  │      6.数组的reduce方法.mp4
+│  │      7.todolist案例_完成footer.mp4
+│  │      8.react脚手架中配置代理(1).mp4
+│  │      9.react脚手架总配置代理(2).mp4
+│  │      10.github搜索案例_静态组件.mp4
+│  │      11.github搜索案例_基本搜索.mp4
+│  │      12.github搜索案例_优化.mp4
+│  │      13.github搜索案例_消息订阅与发布版.mp4
+│  │      
+│  └─day06-路由-video
+│          1.复习.mp4
+│          2.使用Fetch发送请求.mp4
+│          3.对SPA的理解.mp4
+│          4.前端路由的原理.mp4
+│          5.路由的基本使用.mp4
+│          6.NavLink的使用.mp4
+│          7.路由组件与一般组件.mp4
+│          8.Switch的使用.mp4
+│          9.解决样式丢失的问题.mp4
+│          10.Redirect的使用.mp4
+│          11.精准匹配与模糊匹配.mp4
+│          12.push与replace模式.mp4
+│          13.嵌套路由的使用.mp4
+│          14.路由携带params参数.mp4
+│          15.路由携带search参数.mp4
+│          16.路由携带state参数.mp4
+│          17.复习.mp4
+│          18.编程式路由导航.mp4
+│          19.withRouter的使用.mp4
+│          
+└─3-Redux状态管理
+    │  源码文档.zip
+    │  
+    ├─redux-video1
+    │      1.redux的简介.mp4
+    │      10.react-redux的优化.mp4
+    │      2.redux原理图分析.mp4
+    │      3.求和案例_纯react版.mp4
+    │      4.求和案例_redux迷你版.mp4
+    │      5.求和案例_redux完整版.mp4
+    │      6.求和案例_异步action的使用.mp4
+    │      7.对react-redux的理解.mp4
+    │      8.react-redux的使用(1).mp4
+    │      9.react-redux的使用(2).mp4
+    │      
+    └─redux-video2
+            1.redux的简介.mp4
+            2.redux原理图分析.mp4
+            3.求和案例_纯react版.mp4
+            4.求和案例_redux迷你版.mp4
+            5.求和案例_redux完整版.mp4
+            6.求和案例_异步action的使用.mp4
+            7.对react-redux的理解.mp4
+            8.react-redux的使用(1).mp4
+            9.react-redux的使用(2).mp4
+            10.react-redux的优化(1).mp4
+            11.复习.mp4
+            12.react-redux优化(2).mp4
+            13.redux实现数据共享.mp4
+            14.开发者工具的使用.mp4
+            15.最终版.mp4
+            16.纯函数.mp4
+            17.UseState.mp4
+            18.useEffect.mp4
+            19.useRef.mp4

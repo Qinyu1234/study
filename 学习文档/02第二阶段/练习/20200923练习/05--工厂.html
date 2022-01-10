@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        /*
+        使用工厂方法创建一个对象
+         */
+        function fn(name,age,gender,address) {
+            let people={
+                name:name,
+                age:age,
+                gender:gender,
+                address:address,
+                sayhello:function () {
+                    alert(`大家好，我是${this.name}`)
+                }
+            };
+            return people;
+        }
+        let per=fn("小张",20,"男","昌平");
+        let per2=fn("小王",22,"女","西城");
+        let per3=fn("小李",25,"男","朝阳");
+
+        console.log(per);
+        console.log(per2);
+        console.log(per3);
+        per.sayhello();
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

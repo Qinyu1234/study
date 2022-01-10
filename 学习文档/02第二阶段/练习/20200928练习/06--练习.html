@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #box1{
+            background: pink;
+        }
+    </style>
+    <script>
+        window.onload=function () {
+             // 点击按钮1获取box1中的所有p元素
+            let btn01=document.getElementById("btn01").onclick=function() {
+                let box1 = document.getElementsById("box1");
+                let p = box1.getElementsByTagName("p");
+                for (let i = 0; i < p.length; i++) {
+                    p[i].innerHTML += "haha";
+
+                };
+
+
+            };
+
+        };
+    </script>
+</head>
+<body>
+<button id="btn01">按钮1</button>
+<button id="btn02">按钮2</button>
+<button id="btn03">按钮3</button>
+<button id="btn04">按钮4</button>
+<button id="btn05">按钮5</button>
+
+<div id="box1">
+    <p>段落1</p>
+    <p>段落2</p>
+    <p>段落3</p>
+</div>
+
+<div>
+    <p>段落1</p>
+    <p id="p1">段落2</p>
+    <p>段落3</p>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>转化为布尔值Boolean</title>
+    <script>
+        //转化为布尔值Boolean用Boolean（）函数
+        //0 flase null undefined NaN ""空串
+        /*
+        let a=123;//true
+        a="hello";//true
+        a=true;//true
+        a=false;//flase
+        a=null;//flase
+        a=undefined;//flase
+        a=NaN;//flase
+        a=0;//flase
+        a='';//flase
+        console.log(a,typeof a);
+        a=Boolean(a);
+        console.log(a,typeof a);
+
+         */
+        let c=!!'hello';
+            c=!!123;
+            c=!!"ac";
+            c=!!null;
+            c=!!undefined;
+            c=!!false;
+            c=!!0;
+            c=!!Infinity;
+            c=!!NaN;
+            c=!!"";
+        console.log("c=",c,typeof c);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

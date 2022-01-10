@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        /*匿名函数
+
+         */
+        let obj={
+            text:function () {
+                console.log("哈哈");
+                console.log("在obj对象中放一个text的函数");
+            },
+            cc:function () {
+                console.log("嘻嘻");
+                console.log("在obj对象中放第二个cc函数");
+            }
+        }
+        obj.text();
+        obj.cc();
+
+        //第二种写法：简写--在老版本浏览器不支持
+        let obj2={
+            text(){
+                console.log("123");
+                console.log("在obj2对象中放一个text的函数,此函数可以简写把 :function 去掉");
+            },
+            cc(){
+                console.log("简写属性，去掉了 :function ");
+            }
+        }
+        obj2.text();
+        obj2.cc();
+    </script>
+</head>
+<body>
+
+</body>
+</html>

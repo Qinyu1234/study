@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>三元运算符le</title>
+    <script>
+       //三元运算符：条件表达式？语句1：语句2；   当条件达到true时执行1，达到false是执行2
+       //  let a=30,b=20;
+       //  a>b?alert(a):alert(b);
+       //a>b成立  所以执行第一个语句   则出现的是a
+       //  let c=25,d=10;
+        // c<d?alert('c小'):alert('d小');
+       //条件c<d不成立  则执行语句2
+
+        //返回执行结果
+        // let a=30, b=35;
+        // let max = a > b ? a : b ;
+        // console.log("max = " + max);
+       /*
+        let c=120,d=98,e=60;
+        let max=c>d?c:d;
+        max=max>e?max:e;
+        console.log("max=" +max);
+
+        */
+
+        /*let a=50,b=20,f=35;
+        let max=a>b?a:b;
+        max=max>f?max:f;
+        console.log("max="+max);
+
+         */
+
+        "hello"?alert('String字符串转化为true，语法1出来'):alert('语句2');
+         null?alert('null'):alert('null转化为布尔值为flose，语法2出来');
+         undefined?alert('undefined'):alert('undefined转化为布尔值为flose，所以语法2出来');
+         154?alert('你好，154数值转化为布尔值是true，语法1出来'):alert('不好');
+         ""?alert('haha'):alert('空串是flose，语法2出来');
+    </script>
+</head>
+<body>
+
+</body>
+</html>

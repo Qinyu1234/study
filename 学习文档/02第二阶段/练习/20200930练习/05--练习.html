@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #areaDiv {
+            border: 1px solid black;
+            width: 300px;
+            height: 50px;
+            margin-bottom: 10px;
+        }
+
+        #showMsg {
+            border: 1px solid black;
+            width: 300px;
+            height: 20px;
+        }
+    </style>
+
+</head>
+<body>
+<div id="areaDiv"></div>
+<div id="showMsg"></div>
+<script>
+    /*
+    当鼠标移入大div时，在小div中显示坐标信息
+     */
+    //获取到2个div
+    let areaDiv=document.getElementById('areaDiv');
+    let showMsg=document.getElementById('showMsg');
+    //给大div绑定鼠标移入响应时间
+    areaDiv.onmousemove=function (event) {
+        //创建变量X  Y坐标
+
+        let x=event.clientX;
+        let y=event.clientY;
+        showMsg.innerHTML=`x=${x},y=${y}`;
+    };
+</script>
+
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>14_元素的尺寸</title>
+</head>
+<style>
+  div {
+    width: 100px;
+    height: 150px;
+    background: red;
+    padding: 11px;
+    border: 11px #fbd850 solid;
+    margin: 10px;
+  }
+</style>
+</head>
+
+<body>
+<div>div</div>
+
+<!--
+1. 内容尺寸
+  height(): height
+  width(): width
+2. 内部尺寸
+  innerHeight(): height+padding
+  innerWidth(): width+padding
+3. 外部尺寸
+  outerHeight(false/true): height+padding+border  如果是true, 加上margin
+  outerWidth(false/true): width+padding+border 如果是true, 加上margin
+-->
+<script type="text/javascript" src="js/jquery-1.10.1.js"></script>
+<script type="text/javascript">
+    $(function () {
+        var $div = $('div');
+//      width和height方法  获取的就是元素的width和height样式设置的值 不带单位
+        console.log($div.width(),$div.height());
+//      内部尺寸    width+padding
+        console.log($div.innerWidth(),$div.innerHeight());
+//      外部尺寸   width+padding+border
+        console.log($div.outerWidth(),$div.outerHeight());
+//      外部尺寸方法 允许传递一个布尔值参数   默认为false   如果设置为true  则在原有的基础之上包含margin的值
+        console.log($div.outerWidth(true),$div.outerHeight(true));
+
+    })
+
+</script>
+</body>
+
+</html>

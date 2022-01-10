@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        /*
+        闭包：
+            函数里面嵌套一个函数
+         */
+        /*
+        function f() {
+            let times=0;
+            function f1() {
+                times++
+                alert(times)
+            }
+            return f1;
+        }
+        let  result=f();
+        result();
+        result();
+        result();//每调用一次产生一次闭包，对性能不好
+
+         */
+        //可以使用立即执行函数，只产生一次闭包，多次调用
+       let f4= (function () {
+            let a=0;
+           return function () {
+                alert(++a);
+            }
+
+        }());
+        f4();
+        f4();
+        f4();//只产生一次闭包  但是可以多次调用并返回调用次数
+
+
+
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        /*
+        字符串：
+         */
+        let str="hello atGuigU";
+        result=str.length;//获取字符串的长度
+        result=str.concat("nihao");//拼接字符串
+        result=str.charAt(6);//根据索引获取字符串中的字符串
+        result=str.charCodeAt(3);//根据索引获得字符串的Unicode编码
+        result=String.fromCharCode(235028);
+        result=str.indexOf("h")//用来查找字符串第一次出现的位置并返回索引值
+        result=str.lastIndexOf("g");//用来查找字符串最后一次出现的位置并返回索引
+        result=str.slice(3,6);//用来截取从索引开始位置到结束位置（不含）的字符串
+        result=str.split("");//用来将字符串拆分为一个数组，参数为连接符，根据分隔符去拆分
+        result=str.toLowerCase();//转化为小写
+        result=str.toUpperCase();//转化为大写
+        str="  hello atGuigU  ";
+        result=str.trim();//去除字符串前后的空格
+        result=str.trimEnd();//去除字符串后面的空格
+        result=str.trimStart();//去除字符串前面的空格
+
+
+
+
+        console.log(str);
+        console.log(result);
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

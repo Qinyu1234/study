@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>运算符</title>
+    <script>
+        //算数运算符有  +  -  *  /  %  typeof就是运算符 resylt结果
+        //+  任何值和字符串相加  都会有拼串的结果 例如c/d  转化为String
+
+        //-*/  任何值做-*/时，都会转化成number然后做运算
+        //可以通过为一个值-0  */1将其转化为Number
+        let b=34;
+        result=typeof b;
+        console.log(result);
+        console.log(typeof result);
+
+        let a=23;
+        a=a+1;
+        console.log(a);
+        console.log(typeof a);
+        let c='你好';
+        c=c+'haihap';
+        console.log(c);
+        console.log(typeof c);
+        let d='锄禾日当午，汗滴禾下土';
+        d='锄禾日当午，'+
+            '汗滴禾下土';
+        console.log(d);
+        console.log(typeof d);
+        // e=123+'你好';
+        // e=123;
+        // // e=String(e);
+        // e=e+'';
+        // f=456;
+        // f=f+'';
+        h=true;
+        h=h+'';
+        h=false;
+        h=h+'';
+        h=123;
+        h=123+'';
+        console.log(h);
+        console.log(typeof h);
+        console.log('h= '+h);
+        a=4+6+'3';
+        console.log(a);
+        console.log(typeof a);
+        console.log('a= '+a)
+        b=9-3;
+        b=9-'n';
+        b=8-true;
+        b=true-0;
+        b=null-0;
+        b=undefined-0;
+        b='123'-0;
+        b=123/1;
+        b='234'/1;
+        b=null/1;
+        b=false/1;
+        b=true*1;
+        b=false*1;
+        b='123.45'/1;
+        b='123px';
+        b=parseInt(b)*1;
+        b='123.45px';
+        b=parseFloat(b);
+        console.log(b);
+        console.log(typeof b);
+        console.log('b= '+b);
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

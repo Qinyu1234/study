@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #box1{
+            width: 100px;
+            height: 100px;
+            background: pink;
+            margin: 10px;
+        }
+
+    </style>
+    <script>
+        window.onload=function () {
+            //当我们点击按钮时，可以获取到box1
+            let btn01=document.getElementById('btn01');
+            btn01.onclick=function () {
+                let box1=document.getElementById('box1');
+                box1.innerHTML="我是box1";
+            };
+            // 当点击按钮2时可以获取到所有的class为item的li
+            // 获取到按钮2的对象
+            let btn02=document.getElementsById("btn02");
+            btn02.onclick=function () {
+                let item=document.getElementsByClassName("item");//一组
+                //遍历下元素
+                for (let i=0;i<item.length;i++){
+                    alert(item[i]);
+                }
+
+            }
+
+        };
+    </script>
+</head>
+<body>
+    <button id="btn01">我是按钮1</button>
+    <button id="btn02">我是按钮2</button>
+    <div id="box1"></div>
+    <ul>
+        <li class="item">列表1</li>
+        <li class="item">列表2</li>
+        <li class="item">列表3</li>
+        <li class="item">列表4</li>
+    </ul>
+</body>
+</html>

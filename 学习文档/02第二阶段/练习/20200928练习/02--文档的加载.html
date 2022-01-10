@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--
+        文档的js代码有3中引入方式
+        1、写在head中的script标签中  要在前面加Window.onload
+        2、直接写在body的最后
+        3、引入外部的js文件   <script defer src="js文件地址"></script>
+    -->
+    <!--
+    <script>
+        //第一种方式  写在head中  因为网页是从上到下执行  故需要在代码前加Window.onload
+        Window.onload=function () {
+            let bth=document.getElementById("btn");
+            btn.onclick=function () {
+                alert("点我一下");
+            };
+        }
+    </script>
+    -->
+    <!--第三种方式-->
+    <script defer src="app.js"></script>
+</head>
+<body>
+<button id="btn">我是按钮</button>
+<!--第二种当式   写在body的最后-->
+<!--
+<script>
+    let btn=document.getElementById("btn");
+    btn.ondblclick=function () {
+        alert("点我一下");
+    };
+</script>
+-->
+</body>
+</html>

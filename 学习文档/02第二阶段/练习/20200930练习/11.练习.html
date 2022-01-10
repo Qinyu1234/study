@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #box1{
+            width: 300px;
+            height: 300px;
+            background: yellowgreen;
+        }
+        #box2{
+            width: 200px;
+            height: 200px;
+            background: yellow;
+        }
+        #box3{
+            width: 100px;
+            height: 100px;
+            background: red;
+        }
+    </style>
+</head>
+<body>
+<div id="box1">
+    <div id="box2">
+        <div id="box3">
+
+        </div>
+    </div>
+</div>
+<script>
+    /*
+    获取3个div  然后让事件函数由冒泡顺序触发  和用捕获事件触发
+     */
+    //获取3个div
+    let box1=document.getElementById('box1');
+    let box2=document.getElementById('box2');
+    let box3=document.getElementById('box3');
+    //给3个div设置单击响应时间
+    /*
+    有3个参数
+        1.响应事件
+        2.响应函数（）可以写event
+        3.如果是true  代表捕获阶段  由外向里   从window docunment  html...
+            如果是false  代表是冒泡  由内向外  先从触发事假的元素开始  然后向外
+     */
+    box1.addEventListener('click',function () {
+        alert(1);
+    },true);
+    box2.addEventListener('click',function () {
+        alert(2);
+    },true);
+    box3.addEventListener('click',function () {
+        alert(3);
+    },true);
+
+</script>
+</body>
+</html>

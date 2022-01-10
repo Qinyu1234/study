@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    /*
+    鼠标的其他功能
+        contextmenu  鼠标的右键功能键
+        wheel    鼠标滚轮键
+            参数：event.deltaY  垂直方向的滚动  正数表示向下滚动  负数表示向上滚动
+                 event.deltaX  水平方向的滚动  正数表示向右  负数表示向左
+
+
+     */
+    /*
+    document.addEventListener('contextmenu',function (event) {
+        console.log('我点右键了');
+        //可以取消右键功能键
+        //event.preventDefault();
+    })
+
+     */
+    document.addEventListener('wheel',function (event) {
+        //console.log(event.deltaY);
+        /*
+        if (event.deltaY>0){
+            console.log("向下滚");
+        }else {
+            console.log("向上滚");
+        }
+        */
+        //向左向右不太管用
+        if (event.deltaX>0){
+            console.log("向左滚");
+        }else {
+            console.log("向右滚");
+        }
+
+    })
+</script>
+</body>
+</html>

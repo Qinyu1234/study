@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1></h1>
+<script>
+    /*
+    setTimeout()  延时定时器  只执行一次  但是也可以将其转化为多次执行函数
+
+     */
+    let h1=document.getElementsByTagName('h1')[0];
+    let num=0;
+    setTimeout(function text() {
+        num++;
+        h1.innerHTML=num;
+        //当num到10时   停止
+        if (num===10){
+            return;
+        }
+        setTimeout(text,1000);
+    },1000);
+</script>
+</body>
+</html>

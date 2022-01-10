@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        window.onload=function () {
+            document.body  //获取页面的body
+            document.documentElement//获取页面的html标签
+            let div=document.querySelector("div[title]");//根据css选择器获取元素节点  div[title]：属性选择器
+            div.innerHTML="属性为title的div改动";
+            let item=document.querySelector(".item");
+            alert(item);//只找到了第一个
+            item.innerHTML="选项1,haha";//querySelector找到符合的第一个子节点
+            let items=document.querySelectorAll(".item");//找属性值为item的元素节点--找全部的
+            alert(items);//返回Nodelist   列表  不能innerHTML
+
+
+
+
+
+        }
+    </script>
+
+</head>
+<body>
+<div title="我是一个div">
+    我是一个div
+</div>
+
+<div>
+    我是一个div
+</div>
+
+<ul>
+    <li class="item">选项1</li>
+    <li class="item">选项2</li>
+    <li class="item">选项3</li>
+    <li class="item">选项4</li>
+</ul>
+
+</body>
+</html>

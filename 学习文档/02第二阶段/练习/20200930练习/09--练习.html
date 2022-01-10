@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #box1{
+            width: 300px;
+            height: 300px;
+            background: yellowgreen;
+        }
+        #s1{
+            width: 100px;
+            height: 100px;
+            background: red;
+        }
+    </style>
+</head>
+<body>
+<div id="box1">
+    我是div
+    <span id="s1">我是span</span>
+</div>
+<script>
+    /*
+    在body  box  span上同时绑定单击响应事件
+        当祖先与后代元素同时绑定了某一响应事件时，子节点的时间被触发时，它的祖先元素事件也会同时触发
+        如果不让祖先元素的同一事件被触发  可以停止
+            有2中方法
+                1.event.cancelBubble=true;   即可取消冒泡
+                2、event.stopPropagation();  函数方法  停止时间冒泡
+     */
+    //box1绑定
+    let box1=document.getElementById("box1");
+    box1.onclick=function (event) {
+        alert("我是box1中的");
+       // event.cancelBubble=true;
+        event.stopPropagation();
+    };
+    //s1绑定
+    document.getElementById("s1").onclick=function (event) {
+        alert("我是s1中的");
+        event.cancelBubble=true;
+    };
+    //body绑定
+    document.body.onclick=function () {
+        alert("我是body中的");
+    };
+
+</script>
+</body>
+</html>

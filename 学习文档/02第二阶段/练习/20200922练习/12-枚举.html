@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        /*
+        枚举属性
+         */
+        let obj=Object();
+        obj.name="孙悟空";
+        obj.age=18;
+        obj.gender="男";
+        obj.aee=20;
+        //枚举属性
+        for (let n in obj){
+            console.log(n);//n=属性  每次执行将属性赋值给n
+            console.log(n,"=",obj[n]);
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>

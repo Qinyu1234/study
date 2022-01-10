@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>对象</title>
+    <script>
+        /*
+        对象 Obiect
+            是js中的一种数据类型
+         */
+        //创建一个对象
+        let obj=new Object();
+        //向对象中添加属性
+        obj.name="孙悟";
+        obj.age=30;
+        obj.gen="男";
+        obj.address="花果山";
+        obj.name2="猪八戒";
+        //读取对象中的属性
+        console.log(obj.name);
+        //删除对象中的属性
+        delete obj.name2;
+        //console.log(obj);
+        //向对象新增属性--可以是任意类型  也可以是一个对象
+        obj.text=Object() //新增对象的 Object前面的new可以不写
+        obj.text.name="123";
+        obj.text.add="nihao";
+        obj.text.ac=Object();
+        obj.text.ac.name="ghuv";
+        //console.log(obj.text);
+        console.log(obj);
+        let obj2=Object();
+        obj2.es="suiyi";
+        obj2.cc=obj.text.ac;
+        console.log(obj2);
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

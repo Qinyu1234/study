@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        /*
+        练习6：
+	        求100以内所有的奇数之和
+        练习7：
+	        求100以内所有7的倍数之和，以及个数
+        练习8：
+	        水仙花数是指一个 n 位数（n≥3 ），它的每个位上的数字的 n 次幂之和等于它本身（例如：1**3 + 5**3 + 3**3 = 153）。
+	        求 1000 以内所有的水仙花数！
+         */
+        //练习6
+        let sun=0;
+        for (i=1;i<=100;i++){
+            if (i % 2 !=0){
+                sun=sun+i;
+            }
+
+        }
+        console.log("sun=",sun);
+        //练习7
+        let m=0;
+        let con=0;
+        for (a=1;a<=100;a++){
+            if (a%7==0){
+                m=m+a;
+                con++
+            }
+        }
+        console.log(`100以内所有7的倍数之和${m},个数${con}`);
+        //练习8
+        for (let n=100;n<1000;n++){
+            bai=parseInt(n/100);
+            shi=parseInt((n-bai*100)/10);
+            ge=n%10;
+            if (bai*bai*bai+shi*shi*shi+ge*ge*ge===n){
+                console.log("n=",n);
+            }
+
+        }
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

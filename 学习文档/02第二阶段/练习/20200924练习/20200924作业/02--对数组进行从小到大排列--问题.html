@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        /*
+        *   编写代码，对arr2进行从小到大排序
+        * */
+        let arr2 = [3,8,2,9,5,7,4,6,1];
+
+        for (let i=0;i<arr2.length;i++){
+            //获取数组中所有的元素
+            //console.log(arr2[i]);
+            for (let a=i+1;a<arr2.length;a++){
+                if (arr2[a]>arr2[a+1]){
+                    //相邻的元素比较，如果i小于a，则i的位置插入a,删除后面的a
+                   // arr2.splice(a,0,arr2[i]);
+                  // arr2.splice(i,0,arr2[a]);
+                }
+            }
+        }
+        console.log(arr2);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

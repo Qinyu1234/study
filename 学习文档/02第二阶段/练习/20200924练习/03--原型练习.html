@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function Person(name,age) {
+            this.name=name;
+            this.age=age;
+        }
+        Person.prototype.toString=function(){
+            return `我是${this.name},我今年${this.age}`
+
+        }
+        let per=new Person("小张",18);
+        let per2=new Person("小王",18);
+        alert(per);
+        alert(per2);
+        console.log(per);
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

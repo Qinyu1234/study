@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        /*
+        常量const只是禁止修改变量，对修改对象不影响
+         */
+        const obj=Object();
+        obj.name="孙悟空";
+        obj.age=18;
+        //修改属性
+        obj.neme="哈哈";//const常量只是不允许修改变量，对象中的属性不影响，可以修改
+        obj='hello';//const中不允许修改变量  obj在上面已经定义过变量为一个对象，所有在这不能重新修改
+    </script>
+</head>
+<body>
+
+</body>
+</html>

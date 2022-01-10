@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button id="btn01">按钮</button>
+<button id="btn02">按钮</button>
+<script>
+    //第一种绑定响应函数
+    let btn01=document.getElementById("btn01");
+    btn01.onclick=function () {
+        alert(1);
+    };//此种方式对同一事件同一响应函数只能绑定一次，如果绑定多次，后绑定的会覆盖前面绑定的
+    //删除绑定的函数
+    btn01.onclick=null;
+    //第二种方式
+    /*
+    通过addEventListener()函数
+        需要3个参数
+            1.绑定响应函数  不要on  例如：单击click  双击dblclick
+            2.事件的回调函数
+            3.
+        通常情况下  函数会单独提出来，然后删除的时候要删除同一个函数才行
+
+     */
+    function del(){
+        alert(2);
+    }
+    btn02.addEventListener('click',del);
+    //删除绑定的函数  del
+    btn02.removeEventListener('click',del);
+
+
+
+</script>
+</body>
+</html>

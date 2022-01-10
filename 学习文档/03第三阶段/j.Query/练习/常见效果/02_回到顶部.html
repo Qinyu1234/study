@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>03_回到顶部</title>
+  <style>
+    #to_top {
+      width: 30px;
+      height: 40px;
+      font: 14px/20px arial;
+      text-align: center;
+      background: #06c;
+      position: fixed;
+      cursor: pointer;
+      color: #fff;
+      right: 150px;
+      top: 500px;
+    }
+  </style>
+</head>
+<body style="height: 2000px;">
+
+<div id="to_top">返回顶部</div>
+
+<script src="jquery-1.10.1.js"></script>
+<script type="text/javascript">
+//      时间固定     路程越长  速度越快      时间固定的方式   比较常用
+//      速度固定     路程越长  时间越长
+  $(function () {
+//    获取回到顶部的按钮
+      var $toTop = $('#to_top');
+//    定义动画总时长
+      var time = 2000;
+//    定义动画帧时长
+      var itemTime = 20;
+      $toTop.click(function () {
+//        获取当前的总偏移 （滚动条纵坐标）
+          var offset = $('html').scrollTop() + $('body').scrollTop();
+//        计算单次偏移     总偏移 / （ 动画总时长 / 动画帧时长）
+          var itemOffset = offset / ( time / itemTime);
+//        启动定时器    每个一个帧时长 移动一次滚动条  每次移动的距离为单次偏移的值 最终到达顶部后 清除定时器
+          var timer = setInterval(function () {
+              offset -= itemOffset;
+              if(offset <= 0){
+                  clearInterval(timer)
+              }
+              $('html,body').scrollTop(offset);
+          },itemTime)
+
+      })
+
+
+
+  })
+
+
+</script>
+</body>
+
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>20_事件委托_引入.html</title>
+</head>
+
+<body>
+
+<ul>
+  <li>11111</li>
+  <li>1111111</li>
+  <li>111111111</li>
+  <li>11111111111</li>
+</ul>
+
+<li>22222</li>
+<br>
+<button id="btn">添加新的li</button>
+<br>
+
+<!--
+绑定事件监听的问题: 新加的元素没有监听
+-->
+<script type="text/javascript" src="js/jquery-1.10.1.js"></script>
+<script type="text/javascript">
+
+
+  $('#btn').click(function () {
+    $('ul').append('<li>新增li</li>')
+  })
+  //给点击的li增加背景  只有原有li有功能  新增li没有
+/*  $('ul li').click(function () {
+  this.style.background='pink';
+})*/
+  //需要用到委托机制  给新增的li也绑定点击背景函数
+/*  $('ul').on('click','li',function () {
+    this.style.background='pink';
+  })*/
+  //第二种方法
+  $('ul').delegate('li','click',function () {
+    this.style.background='pink';
+  })
+  //解绑  第一种  off  全部取消
+  $('ul').off();
+</script>
+</body>
+</html>

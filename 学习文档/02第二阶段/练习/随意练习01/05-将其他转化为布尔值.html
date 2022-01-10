@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>将其他转化为布尔值</title>
+    <script>
+        let c='hello';
+        c=123;
+        c=true;
+        c=false;
+        c='fukh';
+        c=null;
+        c=undefined;
+        c=Boolean(c);
+        console.log(c);
+        console.log(typeof c);
+        // 数字转布尔值  除了0和NaN是false  其余都是true；
+        //string转布尔  除了空串  其余都是true
+        //null和underfined都是false
+        //对象也会转化为true；
+    </script>
+</head>
+<body>
+
+</body>
+</html>

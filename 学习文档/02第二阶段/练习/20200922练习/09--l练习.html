@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        let a=10;
+        let b=a;
+        a++//修改a的值
+        console.log("a=",a);//a的值变化
+        console.log("b=",b);//修改变量，不影响a的值
+        let obj=Object();
+        obj.name="孙悟空";
+        let  obj2=obj;//将obj赋值给obj2，因为obj是一个对象，会将对象中的属性同时赋值
+        obj.name="123";//修改对象中属性值为123
+        console.log(obj);//修改对象，自身值会变化
+        console.log(obj2);//修改对象，同时指向该值的也会变化
+
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

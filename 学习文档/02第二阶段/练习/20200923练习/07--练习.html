@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function fn(name,age,gender,address){
+            let obj = {
+            name:name,
+            age:age,
+            gender:gender,
+            address:address,
+            say:function () {
+                alert(this.name);
+            }
+        };
+        return obj;
+        }
+        let obj = fn('孙悟空',18,'男','花果山');
+        console.log(obj);
+        obj.say();
+    </script>
+</head>
+<body>
+
+</body>
+</html>

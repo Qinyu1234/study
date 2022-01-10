@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .b1{
+            width: 100px;
+            height: 100px;
+            background-color: tomato;
+        }
+        .b2{
+            width: 100px;
+            height: 100px;
+            background-color: tomato;
+        }
+    </style>
+</head>
+<body>
+<button id="btn01">按钮1</button>
+<div id="box1" class="b1"></div>
+<script>
+    let btn01=document.getElementById('btn01');
+    let box1=document.getElementById('box1');
+    btn01.addEventListener('click',function () {
+       //box1.classList.add('b2');//新增class属性
+       //box1.classList.remove('b1');//删除class属性
+       //box1.classList.replace('b1','b2');//老b1的class属性替换新b2的
+       //box1.classList.toggle('b2');//切换class属性  有的删除  没有class属性的新增
+        let box=box1.classList.contains('b1');//检查一个元素是否含有class属性  有返回true  没有返回false
+        console.log(box);
+
+
+    })
+</script>
+</body>
+</html>

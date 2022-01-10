@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>20_事件委托_引入.html</title>
+</head>
+
+<body>
+
+<ul>
+  <li>11111</li>
+  <li>1111111</li>
+  <li>111111111</li>
+  <li>11111111111</li>
+</ul>
+
+<li>22222</li>
+<br>
+<button id="btn">添加新的li</button>
+<br>
+
+<!--
+绑定事件监听的问题: 新加的元素没有监听
+-->
+<script type="text/javascript" src="js/jquery-1.10.1.js"></script>
+<script type="text/javascript">
+    $('ul li').click(function () {
+//       就算是使用jquery绑定事件的操作  但是在事件的回调函数当中 this依旧指向当前事件源的那个dom对象
+      $(this).css('background','pink');
+    });
+  $('#btn').click(function () {
+    $('ul').append('<li>我是新增的li</li>')
+  })
+</script>
+</body>
+</html>

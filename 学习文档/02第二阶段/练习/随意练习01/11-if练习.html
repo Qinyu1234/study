@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>if练习</title>
+    <script>
+        //prompt就是在网页中创建一个可以输入的文本框，然后将用户输入的内容赋值给a，然后在用if对a进行判断
+        let a=prompt("请输入小米的成绩");
+        //成绩是0-100的数值，但是用户可能输入时不知道，或填错，则此时会有一个判断值是否合法
+        //  所以第一步是先判断合法，然后在一步一步执行  isNaN代表输入的不是数值
+            if (a>100 ||a<0 ||isNaN(a)){
+                alert("输入有误，请刷新输入0-100之间的数值")
+            } else if (a==100){
+            alert("奖励一辆BMW");
+        }else if (a>=80 && a<=99){
+            alert("奖励手机");
+        }else if (a<80 && a>=60){
+            alert("奖励一本书");
+        }else {
+            alert("什么也没有");
+        }
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

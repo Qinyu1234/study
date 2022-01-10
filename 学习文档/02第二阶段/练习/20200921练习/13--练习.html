@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        /*
+        5、公鸡5元一只，母鸡3元一只，小鸡1元三只，问100元正好花完而且要买到100只鸡，可以买每种鸡各多少只？
+
+         */
+        console.time();
+        let i=0;
+        for (let a=0;a<=20;a++){
+            for (let b=0;b<=33;b++){
+                for (let c=0;c<=100;c++){
+                    if ((a+b+c===100) && (5*a+3*b+c/3===100)){
+                        i++
+                        document.write("<br>");
+                        document.write(`${a}只公鸡+${b}只母鸡+${c}只小鸡`);
+                    }
+                }
+            }
+
+        }
+        document.write("<br>");
+        document.write(i);
+        console.timeEnd();
+    </script>
+</head>
+<body>
+
+</body>
+</html>

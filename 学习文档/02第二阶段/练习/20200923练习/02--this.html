@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        /*
+            this
+         */
+        //设置全局变量
+        var name="全局name变量";
+
+        function fn() {
+            console.log(this.name);
+        }
+        var obj={
+            name:"孙悟空",
+            age:fn
+        };
+        var obj2={
+            name:"猪八戒",
+            age:fn
+        };
+        console.log(obj2);
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

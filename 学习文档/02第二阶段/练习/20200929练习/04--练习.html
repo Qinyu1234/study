@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        window.onload=function () {
+            //给list创建一个单击函数
+            document.getElementById("btn01").onclick=function(){
+                //在ul中插入一个元素li
+                let list=document.getElementById("list");
+                //创建一个新的li
+                let li=document.createElement("li");
+                //设置li中的文本内容
+               li.innerHTML="玉兔精";
+                //将li添加进list中,会默认放在ul的最后一个元素
+               // list.appendChild(li);
+               /*
+               * 如果将li放在指定位置
+               * insertAdjacentElement()  将新添加的元素放在指定位置
+               * 参数：
+               *    beforebegin  开始之前  即指定元素的前面一个节点  list是ul   beforebegin就是ul的前面  放到ul的外部去了
+               *    afterbegin   开始之后的位置  即下一个元素  在ul中就是第一个节点
+               *    beforeend    结束之前
+               *    afterend    结束之后的节点
+               * */
+                //list.insertAdjacentElement("beforeend", li)
+                /*
+                insertAdjacentHTML()
+                    可以直接在括号中传插入的位置，插入的元素代码
+                 */
+              // list.insertAdjacentHTML("beforeend","<li>牛魔王</li>");
+                /*
+                将某个元素插入到指定元素的前边   父节点.insertBefore(新节点，旧节点);
+                 */
+                let shs=document.getElementById("shs");
+                //list.insertBefore(li,shs);
+                /*
+                将某个节点替换老节点  父节点.replace.Child(新节点，老节点)
+                 */
+                list.replaceChild(li,shs);
+            }
+
+
+        };
+    </script>
+</head>
+<body>
+<button id="btn01">按钮1</button>
+<ul id="list">
+    <li>孙悟空</li>
+    <li id="shs">猪八戒</li>
+    <li>沙和尚</li>
+    <li>唐僧</li>
+</ul>
+
+</body>
+</html>

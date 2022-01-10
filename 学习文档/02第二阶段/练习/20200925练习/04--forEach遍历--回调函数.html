@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        /*
+        forEach()  用来遍历数组中的元素
+            该方法需要一个函数作为forEach()的参数
+            该函数需要有3个参数
+                ①回调函数的元素
+                ②回调函数的索引
+                ③数组本身
+         */
+        let arr = ['孙悟空', '沙和尚', '猪八戒', '唐僧'];
+        arr.forEach(function (element,index,array) {
+            //element作为参数元素传递进回调函数
+            //index作为参数索引传递进回调函数
+            //array作为参数数组传递进回调函数
+            //console.log("-->",element);
+           // console.log("---->",index);
+           // console.log("+++>",array);
+            console.log(index,element);
+        })
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box{
+            /*  参与过渡的样式 一定要设置初始值吗？  答案是否定的
+                是否需要   取决于这个样式的默认值  是否为一个数值
+            */
+            /*width的默认值  auto*/
+            width: 200px;
+            height: 200px;
+            background: pink;
+            /*
+                延迟三秒  然后宽度开始过渡 两秒完成
+                1.当宽度过渡之后   背景色开始过渡 两秒完成
+                2.宽度背景色同时过渡   背景色开始过渡 两秒完成
+                3.背景色先过渡
+            */
+            /*transition: width 2s 3s ,2s;*/
+            /*transition: width 2s 3s ,all 2s 0s;*/
+            /*transition: width 2s 3s ,width 2s 0s,background 2s 0s;*/
+            transition: 2s;
+            /*
+                参与过渡的属性： all
+                过渡时间：0
+                延迟时间：0
+                过渡类型：ease-in
+            */
+            /*opacity: 1;*/
+        }
+        .box:hover{
+            width: 500px;
+            background: yellowgreen;
+            /*opacity: 0;*/
+        }
+    </style>
+</head>
+<body>
+<div class="box"></div>
+<script type="text/javascript">
+    //  过渡必须要在已经渲染完成的元素上生效
+    window.onload = function () {
+      var box = document.querySelector('.box');
+
+      box.style.background = 'skyblue';
+    }
+</script>
+</body>
+</html>

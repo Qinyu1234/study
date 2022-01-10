@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        /*
+        数组的四种方法
+            1、push()
+                向数组的末尾添加一个或多个元素并返回新的长度
+            2、pop()
+                 删除数组末尾的元素并返回增加结果
+            3、unshift()
+                向数组的前面增加一个或多个元素并返回新的长度
+            4、shift()
+                删除数组前面的一个元素并返回增加结果
+         */
+        let arr = ['孙悟空', '猪八戒', '沙和尚', '唐僧', '蜘蛛精'];
+        //增加元素
+        result=arr.push("白骨精","蝎子精");
+        //删除最后一个元素
+        arr.pop();
+        console.log(arr);
+        console.log(result);
+        console.log(arr.pop());
+        //在前面增加一个元素
+        result=arr.unshift("火龙果","苹果");
+        console.log(arr);
+        console.log(result);
+        //删除前面一个元素
+        arr.shift();
+        console.log(arr);
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

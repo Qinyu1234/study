@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            float: left;
+        }
+        .div1{
+            background: pink;
+            margin-right: 20px;
+        }
+        .div2{
+            background: orange;
+        }
+    </style>
+</head>
+<body>
+<div class="div1"></div>
+<div class="div2"></div>
+<script type="text/javascript">
+  function $() {
+    var obj = {
+        name:'刘志远',
+        eat:function () {
+          console.log(this.name+'贼能吃')
+            return this
+        },
+        play:function () {
+          console.log(this.name+'喜欢踢球')
+            return this
+        }
+    };
+    return obj;
+  }
+//   对象链式开发
+  $().eat().play();
+</script>
+</body>
+</html>

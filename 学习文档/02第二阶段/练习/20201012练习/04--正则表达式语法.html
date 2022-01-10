@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    /*
+    语法
+        {m} 含有m次
+        {m,n} 含有m--n次
+        {m,}  至少含有m次
+        +  至少含有1次{m，}
+        ？ 0-1次  有或者没有都行{0,1}
+        * 0-多次  不限  相当于{0，}
+     */
+    let re=/a/;//用来检查是否含有a
+    console.log(re.test('a'));//true
+    re=/a{3}/;//{m} 含有m次
+    console.log(re.test('abaaaa'));//true  只要有3个a连着就是true
+    console.log(re.test('abaabc'));//false
+    re=/ab{1,3}c/;//{m,n} 含有m--n次  识别是是{}前面的一个字符
+    console.log(re.test('abaa'));//false  含有1-3个b  后面要跟c才行
+    re=/ab{1,}c/;//{m,}  至少含有m次
+    console.log(re.test('abbbbca'));//true
+
+</script>
+</body>
+</html>

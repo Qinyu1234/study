@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>转化为数值</title>
+    <script>
+        let a="123";//字符串转化为数值123
+        a=123.45;//数值转化为数值123.45
+        a='hello';//字符串转化为数值，NaN
+        a='123px';//NaN,但是由于需求需要前面的123，直接转化会出现NaN，故可以使用parseInt（）
+        //a=+true;//1
+        //a=+false;//0
+       // a=+null;//0
+        //a=+undefined;//NaN
+        a=+NaN;
+        a=+Infinity;
+        a=+0;
+        a=+"123p";
+
+        console.log(a,typeof a);
+        //a=Number(a);
+        console.log("a=",a);
+
+        //parseInt()使用举例
+        /*
+        let b="156px";//156
+        b=178.35;//178取整数 从左至右
+        console.log(b,typeof b);
+        b=parseInt(b);
+        console.log(b,typeof b);
+
+        let c="156.23px";//156.23  取到小数位  从左至右
+        console.log(c,typeof c);
+        c=parseFloat(c);
+        console.log(c,typeof c);
+
+         */
+    </script>
+</head>
+<body>
+
+</body>
+</html>

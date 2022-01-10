@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+<button id="btn01">点我一下</button>
+<ul>
+    <li>
+       <a href="##">去百度</a>
+    </li>
+    <li>
+        <a href="##">去百度</a>
+    </li>
+    <li>
+        <a href="##">去百度</a>
+    </li>
+</ul>
+<script>
+    /*
+    点击按钮  新增li标签  并绑定单击响应函数
+     */
+    //获取按钮  超链接
+    let btn01=document.getElementById("btn01");
+    let links=document.getElementsByTagName("a");
+    let ul=document.getElementsByTagName("ul")[0];
+    //点击点我一下  新增li标签
+    btn01.addEventListener("click",function () {
+        ul.insertAdjacentHTML("afterbegin",'<li><a href="##">去百度</a></li>');
+    });
+    //给ul绑定单击响应时间
+    ul.addEventListener("click",function (event) {
+        //取消跳转默认样式
+        //event.preventDefault();
+       // alert(123);
+        //此响应函数绑定给ul后，通过冒泡机制传递给li和a
+        //判断点击时间是否是a  如果是a  则响应  如果不是a  则不响应
+        if (event.target.tagName.toUpperCase()==="A"){
+            event.preventDefault();
+            alert(123);
+        }
+    });
+</script>
+</body>
+</html>

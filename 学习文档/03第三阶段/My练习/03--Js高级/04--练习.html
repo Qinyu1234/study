@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="" type="text/javascript"></script>
+    <script>
+       /* var a=10;
+        var b=20;
+        function fn() {
+            var c=300;
+            function fn1() {
+                console.log(a,b,c);
+            }
+            return fn1();
+        }
+        fn();*/
+        //console.log(a,b,c);
+
+      /*  var count = 0;
+        function add() {
+            count = count + 1;
+            console.log(count);
+        }
+        add();*/
+
+        /*function addCount() {
+            var a = 0;
+            return function() {
+                a = a + 1;
+                console.log(a);
+            };
+        }
+       var fun1 = addCount();
+        fun1();
+        console.log(fun1);*/
+
+
+       var age = 10;
+       function foo(){
+           console.log(age);//-----------------10
+           var name = "hunt_bo";
+           return function(){
+               console.log(name);
+           }
+       }
+       //console.log(name);//---------------2
+       var bar = foo();
+       bar();
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

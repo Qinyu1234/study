@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <button id="btn">我是一个按钮</button>
+    <script>
+        let btn=document.getElementById("btn");
+        btn.innerHTML="哈哈";//更改btn内部
+        btn.onclick=function () {//在事件触发是执行函数  单击onclick
+            alert("单击响应函数");
+        }
+        btn.ondblclick=function () {//双击  ondblclick
+            alert("双击响应函数");
+        }
+        btn.onmouseenter=function () {
+            alert("鼠标移入时的时间响应函数");//鼠标移入
+        }
+        let btn=document.getElementById("btn");
+        btn.onclick=function () {
+            alert("单击响应函数");
+        }
+    </script>
+
+</body>
+</html>

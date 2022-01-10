@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function Dog(name,age,color) {
+            this.name=name;
+            this.age=age;
+            this.color=color;
+        }
+        Dog.prototype.run=function () {
+            console.log("可以跑");
+        }
+        Dog.prototype.play=function () {
+            console.log("可以吃");
+        }
+        var d1=new Dog('wangcai',2,'black');
+        console.log(d1);
+        d1.run();
+        d1.play();
+        function CorKy(name,age,color) {
+            Dog.call(this,name,age,color);
+        }
+        CorKy.prototype=new Dog();
+        CorKy.prototype.constructor=CorKy;
+        var c1=new CorKy('maqiu',3,'black');
+        c1.run();
+        c1.play();
+        console.log(c1);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

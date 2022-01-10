@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button id="btn01">按钮</button>
+<script>
+    document.getElementById('btno1').addEventListener('click',function () {
+       /*
+       Navigator  用来识别浏览器信息
+            属性userAgent  返回的是一个字符串
+            navigator.userAgent可以检查其他浏览器  除了ie
+
+            IE需要中有ActiveXObject时唯一的  其他浏览器没有  此时可以使用这个属性检查是否是IE
+                'ActiveXObject' in window  检查window是否有这个属性  有返回true  则执行后面的语句
+        */
+        let ua=navigator.userAgent;
+        if (ua.indexOf('Chrome') !== -1){
+            alert('用户使用的是谷歌浏览器');
+        }else if (ua.indexOf('Firefox') !== -1){
+            alert('用户使用的是火狐浏览器');
+        }else if ('ActiveXObject' in window ){
+            alert('用户使用的是IE浏览器');
+        }
+    })
+</script>
+</body>
+</html>

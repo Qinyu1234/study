@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        //假设年利率是5%，本金2000，5年后存的本息是多少？
+        //第一年  mon=2000*1.05
+        let mon=2000;
+        let con=0;
+        while (con<5){
+            mon=mon*1.05;
+            con++
+        }
+       alert("mon=," +mon);
+        console.log(`${con}年=${mon}元`);
+
+        console.log(2000*(1.05)**5);
+    </script>
+
+</head>
+<body>
+
+</body>
+</html>

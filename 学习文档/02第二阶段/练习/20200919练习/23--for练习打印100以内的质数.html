@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        //打印100以为所有的质数
+        for (let i = 2; i <= 100; i++) {
+            let b = true;
+            for (a = 2; a < i; a++) {
+                if (i % a == 0) {
+                    //证明i不是质数  i/比本身小的数=0
+                    b = false;
+                }
+            }
+            if (b) {
+                console.log("i=", i);
+            }
+
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>

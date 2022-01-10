@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        /*
+        this:
+            根据调用形式不同  this指向不同
+            1、函数调用时，this是window
+            2、把函数作为方法调用时，this就是调用方法的对象
+            3、构造函数调用时，this就是新建的对象
+            4、通过call和apply调用时，this就是第一个参数
+         */
+        /*
+        function fn(a,b) {
+            alert(this)
+        }
+
+         */
+        //fn();//直接调用函数时，this是window
+       // let obj={fn};//把函数作为方法放进obj对象中，this就是obj
+        function Fn(name,age) {
+            this.name=name;
+            this.age=age;
+        }
+        let per=new Fn("小张",20);
+        console.log(per);//this指的是新建的对象---将 per=new Fn("小张",20);  也可以说是per
+
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

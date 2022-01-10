@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        //switch分支语句是条件分支语句，满足条件前面的语句，后面的流程会继续往下走
+        //例如：当num=2满足case的2   则此时执行2之后的  2 3都会同时执行
+        //如果只想2执行，而后面的3不执行，则需要给2后面跟一个break,break就是为了退出switch语句;
+        //一般情况下，case后面都会跟着一个break，只执行当前的操作，不同时执行后面的
+        //如果所有的条件都不满足的，结果为flose的，则执行最后的一条default后的语句
+
+        let num=5;
+        switch (num) {
+            case 1:
+                console.log("壹");
+            case 2:
+                console.log("贰");
+            break;
+            case 3:
+                console.log("叁");
+            break;
+            default:
+                console.log("都不符合要求");
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>

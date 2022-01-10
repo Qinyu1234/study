@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>25_扩展插件</title>
+  <style type="text/css">
+    * {
+      margin: 0px;
+    }
+
+    .div1 {
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      top: 50px;
+      left: 10px;
+      background: red;
+    }
+  </style>
+</head>
+<body>
+<input type="checkbox" name="items" value="足球"/>足球
+<input type="checkbox" name="items" value="篮球"/>篮球
+<input type="checkbox" name="items" value="羽毛球"/>羽毛球
+<input type="checkbox" name="items" value="乒乓球"/>乒乓球
+<br/>
+<input type="button" id="btn1" value="全　选"/>
+<input type="button" id="btn2" value="全不选"/>
+<input type="button" id="btn3" value="反选"/>
+
+<!--
+1. 扩展jQuery的工具方法
+  $.extend(object)
+2. 扩展jQuery对象的方法
+  $.fn.extend(object)
+-->
+<script type="text/javascript" src="js/jquery-1.10.1.js"></script>
+<script type="text/javascript" src="js/my_jQuery.js"></script>
+<script type="text/javascript">
+  $(function () {
+
+//      返回较小的值
+        console.log($.min(9,12));
+//      返回较大的值
+        console.log($.max(45,56));
+//      去除字符串左边空格
+      var str = '   atguigu   ';
+        console.log('---'+$.trimLeft(str)+'---');
+//      去除字符串右边空格
+        console.log('---'+$.trimRight(str)+'---');
+        var $checkboxList=$(':checkbox')
+        $('#btn1').click(function () {
+          $checkboxList.checkAll();
+        })
+         $('#btn2').click(function () {
+           $checkboxList.noCheckAll();
+         })
+         $('#btn3').click(function () {
+           $checkboxList.reversalCheck();
+        })
+
+
+  })
+
+</script>
+
+</body>
+</html>

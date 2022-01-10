@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>03_jQuery核心函数</title>
+</head>
+
+<body>
+
+<div class="box">
+  <button id="btn">测试</button>
+  <br/>
+
+  <input type="text" name="msg1"/><br/>
+  <input type="text" name="msg2"/><br/>
+
+
+</div>
+<div>
+
+</div>
+
+<!--
+1. 作为一般函数调用: $(param)
+  1). 参数为函数 : 当DOM加载完成后，执行此回调函数
+  2). 参数为选择器字符串: 查找所有匹配的标签, 并将它们封装成jQuery对象
+  3). 参数为DOM对象: 将dom对象封装成jQuery对象
+  4). 参数为html标签字符串 (用得少): 创建标签对象并封装成jQuery对象
+2. 作为对象使用: $.xxx()
+  1). $.each() : 隐式遍历数组
+  2). $.trim() : 去除两端的空格
+-->
+
+<!--/*-->
+<!--需求1. 点击按钮: 显示按钮的文本, 显示一个新的输入框-->
+<!--需求2. 遍历输出数组中所有元素值-->
+<!--需求3. 去掉"  my atguigu  "两端的空格-->
+<!--*/-->
+<script type="text/javascript" src="js/jquery-1.10.1.js"></script>
+<script type="text/javascript">
+//    <!--需求1. 点击按钮: 显示按钮的文本, 显示一个新的输入框-->
+//  加载回调
+//   1. 参数为匿名函数  约等于window.onload
+  $(function () {
+//    2.参数为选择器字符串，查找到匹配的元素封装成jquery对象 返回
+      $('#btn').click(function () {
+//        在事件回调函数当中的this  还是dom对象
+//          3.参数为dom对象，就是将当前的dom对象转换成对应的jquery对象返回
+          alert($(this).html());
+//          4.参数为标签字符串，创建对应结构的标签 并且封装成jquery对象
+          $('<input type="text" name="msg2"/><br/>').appendTo('div')
+      });
+//<!--需求3. 去掉"  my atguigu  "两端的空格-->
+      var str = '    atguigu    ';
+      console.log($.trim(str))
+  })
+
+</script>
+</body>
+</html>

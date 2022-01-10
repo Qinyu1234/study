@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    /*
+            *   dalang.wu@163.com
+            *   编写一个正则表达式，来检查一个字符串是否是合法的电子邮件
+            *
+            *   hello                .xxxx                               @   abc                     .com
+            *   任意字母数字_ 一位以上   .任意字母数字_ 一位以上 有没有都行      @   字母数字或- 一位以上    .任意字母 2-5位  出现一到两次
+            *   \w+                  (\.\w+)*                            @   [a-z0-9-]+          \.([a-z]{2,5}){1,2}
+            * */
+    //创建一个变量  表示邮箱
+    let smil='dalang.wu@163.com';
+        smil='sdf.fsuh@dfh.comc'
+    //创建一个正则
+    let re2=/^\w+(\.\w+)*@[a-z0-9-]+\.([a-z]{2,5}){1,2}$/;
+    console.log(re2.test(smil));
+
+</script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #box1{
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+<button id="btn01">按钮1</button>
+<div id="box1"></div>
+
+</body>
+<script>
+    //先获取btn01
+    let box1=document.getElementById("box1");
+    //点击按钮  将box1中的样式更改
+    document.getElementById("btn01").onclick=function () {
+        //对样式更改  元素.style.样式名=值；
+       // alert(123)
+       box1.style.backgroundColor='yellow';
+        box1.style.width='300px';
+    };
+</script>
+</html>

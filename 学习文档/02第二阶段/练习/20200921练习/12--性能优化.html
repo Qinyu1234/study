@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        /*
+        优化一：  在判断a不是质数时，第一次实现false后，后面的可以结束，不需要继续执行
+                优化前： 10000  156ms
+                优化后： 10000  18ms
+            优化二：  在i<a处，例如36：  1/36，2/18，3/12，4/9，6/6  36**0.5=6
+                优化前： 100000  2133ms
+                优化后： 100000  72ms
+            优化三：  在外层循环处a<100000处,可以直接把偶数刨除，偶数肯定不是质数  既可以a=3开始  循环a++改为a+=2就是奇数
+
+                优化后： 100000  65ms
+
+         */
+        console.time();
+        //console.log(2);
+        for (a=3;a<1000000;a+=2) {
+                let flag = true;//默认是质数
+                for (b = 2; b <= a**0.5; b++) {
+                    if (a % b === 0) {
+                        flag = false;
+                        break;
+                    }
+                }
+                if (flag) {
+
+                   // console.log(a);
+                }
+
+        }
+
+            console.timeEnd();
+    </script>
+</head>
+<body>
+
+</body>
+</html>

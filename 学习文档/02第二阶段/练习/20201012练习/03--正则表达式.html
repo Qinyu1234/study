@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    /*
+    正则表达式
+        语法： new.RegExp('正则表达式','匹配模式')；
+        '匹配模式'传值一个i  代表不区分大小写  如果不写  则默认严格区分大小写
+        test();用来检查一个字符串是否符合正则表达式  符合返回true  不符合false
+
+        主要用来判断用户输入的电话号码 邮箱地址等是否是合法
+
+     */
+    let re=new RegExp('a','i');//字符串a表示正则表达式  是否含有  i不区分大小写
+    let re2=/a/i;//与上面的一样  这个是简写的正则表达式
+    //判断是否是正则表达式
+    console.log(re.test('abc'));//true
+    console.log(re.test('ccsabc'));//true
+    console.log(/a/i.test('BAcdq'));//i不区分大小写  true
+    console.log(re2.test('Bcdq'));//false
+</script>
+</body>
+</html>

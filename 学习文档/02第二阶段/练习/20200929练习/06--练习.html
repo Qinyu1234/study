@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+        #total {
+            width: 450px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        ul {
+            list-style-type: none;
+        }
+
+        li {
+            border-style: solid;
+            border-width: 1px;
+            padding: 5px;
+            margin: 5px;
+            background-color: #99ff99;
+            float: left;
+        }
+
+        .inner {
+            width: 400px;
+            border-style: solid;
+            border-width: 1px;
+            margin: 10px;
+            padding: 10px;
+            float: left;
+        }
+
+        #employeeTable {
+            border-spacing: 1px;
+            background-color: black;
+            margin: 80px auto 10px auto;
+        }
+
+        th,td {
+            background-color: white;
+        }
+
+        #formDiv {
+            width: 250px;
+            border-style: solid;
+            border-width: 1px;
+            margin: 50px auto 10px auto;
+            padding: 10px;
+        }
+
+        #formDiv input {
+            width: 100%;
+        }
+
+        .word {
+            width: 40px;
+        }
+
+        .inp {
+            width: 200px;
+        }
+    </style>
+    <script>
+        window.onload=function () {
+            let del=function(){
+                //获取需要删除点击的父元素
+                let tr=this.parentNode.parentNode;
+                //找到要删除的元素节点
+                let name=tr.firstElementChild.innerHTML;
+                //删除时希望有弹出框提示确认
+                // confirm()用来弹出一个确认框  确认返回true  取消返回false
+                if ( confirm(`确认要删除${name}吗`)){
+                    tr.parentNode.removeChild(tr);
+                }
+                //取消超链接自动跳转的默认样式
+                return false;
+            }
+            //获取到所有的超链接
+            let links=document.getElementsByTagName("a");
+            //遍历超链接
+            for (let i=0;i<links.length;i++){
+                //为每一个超链接设置单击函数
+                links[i].onclick=del;
+                /*
+                *    <tr>
+                        <td>Tom</td>
+                        <td>tom@tom.com</td>
+                        <td>5000</td>
+                        <td><a href="deleteEmp?id=001">Delete</a></td>
+                    </tr>
+                * */
+                //获取id为addEmpButton按钮
+                let addEmpButton=document.getElementById('addEmpButton');
+                //绑定单击响应按钮
+                addEmpButton.onclick=function(){
+                    //获取名字
+                    let empName=document.getElementById('empName').value;
+                    //获取email
+                    let email=document.getElementById('email').value;
+                    //获取salary
+                    let salary=document.getElementById('salary').value;
+                    //创建一个tr标签  tr单独创建完之后里面是空的  就可以对内部进行重新赋值
+                    let tr=document.createElement('tr');
+                    /*
+                    tr.innerHTML=`<td>${empName}</td>
+                                  <td>${email}</td>
+                                  <td>${salary}</td>
+                                  <td><a href="##">Delete</a></td>`
+
+                    //可以直接使用模板字符串进行拼串  但是  此时的a是直接添加的文本  需要重新获取然后绑定单击响应函数
+                    let link=tr.getElementsByTagName("a")[0];
+                    link.onclick=del;
+
+                     */
+                    //也可以使用拼串创建td
+                    tr.innerHTML="<td>"+empName+"</td>+
+                                 <td>"+empName+"</td>+
+                                <td>"+empName+"</td>+
+                                <td><a href="##">Delete</a></td>"
+
+
+
+
+                    //获取tbody
+                    let tbody=document.getElementsByTagName("tbody")[0];
+                    //将tr加在tbody中
+                    tbody.appendChild(tr);
+
+
+                }
+
+
+
+
+            }
+        };
+    </script>
+</head>
+<body>
+<table id="employeeTable">
+    <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Salary</th>
+        <th>&nbsp;</th>
+    </tr>
+    <tr>
+        <td>Tom</td>
+        <td>tom@tom.com</td>
+        <td>5000</td>
+        <td><a href="deleteEmp?id=001">Delete</a></td>
+    </tr>
+    <tr>
+        <td>Jerry</td>
+        <td>jerry@sohu.com</td>
+        <td>8000</td>
+        <td><a href="deleteEmp?id=002">Delete</a></td>
+    </tr>
+    <tr>
+        <td>Bob</td>
+        <td>bob@tom.com</td>
+        <td>10000</td>
+        <td><a href="deleteEmp?id=003">Delete</a></td>
+    </tr>
+</table>
+
+<div id="formDiv">
+
+    <h4>添加新员工</h4>
+
+    <table>
+        <tr>
+            <td class="word">name: </td>
+            <td class="inp">
+                <input type="text" name="empName" id="empName" />
+            </td>
+        </tr>
+        <tr>
+            <td class="word">email: </td>
+            <td class="inp">
+                <input type="text" name="email" id="email" />
+            </td>
+        </tr>
+        <tr>
+            <td class="word">salary: </td>
+            <td class="inp">
+                <input type="text" name="salary" id="salary" />
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" align="center">
+                <button id="addEmpButton">
+                    Submit
+                </button>
+            </td>
+        </tr>
+    </table>
+
+</div>
+
+
+</body>
+</html>

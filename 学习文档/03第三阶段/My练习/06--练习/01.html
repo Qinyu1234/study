@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+  <ul>
+    <li>111</li>
+  </ul>
+<script type="text/javascript">
+  /* var a={n:1}
+   var b=a;
+   a.x=a={n:2}
+   console.log(a.x);
+   console.log(b.x);
+
+   function fun1(){
+       var sum=1;
+       return function(){
+           sum++; return sum;
+       }
+   }
+   var fun2=fun1();
+
+   console.log(fun2());
+   console.log(fun2());
+
+      function fn2() {
+        var a = 0;
+        a++;
+        console.log(a)
+      }
+      fn2()
+      fn2()
+      fn2()
+
+   function a(a){
+       a[1] = 5;
+   }
+   a(a);
+   a = [1,2,3];
+   console.log(a);*/
+
+//   function Foo(){
+//       getName=funtion(){
+//           alert(1)
+//       }
+//       return this;
+//   }
+//   Foo.getName=function(){
+//       alert(2)
+//   }
+//   Foo.prototype.getName=function(){
+//       alret(3)
+//   }
+//   var getName=function(){
+//       alert(4)
+//   }
+//   function getName(){
+//       alert(5)
+//   }
+
+//   请写出输出结果
+//   Foo.getName()
+//   getName();
+//   Foo.getName();
+//   getName();
+//   new Foo.getName();
+//   new Foo().getName();
+//   new new Foo().getName();
+var arr=[1,5,3,17,9]
+
+function max(arr){
+  var max=arr[0];
+ for(var i=0;i<arr.length;i++){
+    if(arr[i]>max){
+      max = arr[i]
+    }
+ }
+ return max
+}
+max(arr);
+console.log(max)
+
+function Dog(name,age){
+  this.name = name
+  this.age = age
+}
+Dog.prototype.run = function(){
+  console.log('我可以跑')
+}
+function Coy(name,age){
+  Dog.call(this,name,age)
+}
+Coy.prototype = new Dog();
+Coy.prototype.constructor = Coy
+Coy.prototype.play = function(){
+  console.log('我喜欢玩')
+}
+var dd = new Dog('dp',2);
+var cc = new Coy('ll',3);
+console.log(dd)
+console.log(cc)
+dd.run();
+cc.run();
+cc.play();
+
+</script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        //创建构造函数
+        function Person(name,age) {
+            this.name=name;
+            this.age=age;
+        }
+        //共有的属性，可以创建在原型对象中,原型对象是构造函数中的一个属性
+        Person.prototype.sayHello=function(){
+            alert(`大家好，我是${this.name}`)
+
+        }
+        //Person的实例
+        let per=new Person("小张",28)
+        let per2=new Person("小王",28)
+        console.log(per);
+        console.log(per2);
+        per.sayHello();
+        per2.sayHello();
+    </script>
+</head>
+<body>
+
+</body>
+</html>

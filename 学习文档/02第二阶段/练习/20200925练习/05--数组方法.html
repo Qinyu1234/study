@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        /*
+        concat() ：用来连接2个数组---不会影响原数组,返回连接数组结果
+         */
+        /*
+        let arr=['我','和'];
+        let arr2=['你','concat为了连接两个数组'];
+        result=arr.concat(arr2,'直接增加元素',['数组','也可以']);
+        //还可以直接在concat（）中直接添加元素，并连接
+        console.log(result);
+        */
+        /*
+        indexof（）：用来检查元素在数组中的位置  有2个参数：1、要查询的元素，2、查询的起始位置，并返回结果
+                检查元素第一次出现的索引，有则返回索引，没有返回-1
+         */
+        /*
+        result=arr.indexOf('和',0);//在arr中  查询元素’和‘，从索引为0的位置开始查询
+        console.log(result);
+        */
+        /*
+        LastInsexof（）：用来查询元素在数组中的位置  有2个参数：1、要查询的元素，2、查询的起始位置，并返回结果
+                与indexof不一样的是从元素的最后往前查询  检查元素最后一次出现的索引，有则返回元素的索引，没有返回-1
+         */
+        let arr3=[a,c,d,r,w,f,s,b,a,s,z];
+        result=arr3.lastIndexOf("a");//查询元素a在索引为1的位置开始最后一次出现的索引
+        console.log(result);
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

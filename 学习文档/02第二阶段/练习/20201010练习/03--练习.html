@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #box1{
+            width: 100px;
+            height: 100px;
+            background-color: yellowgreen;
+
+        }
+
+        #box2{
+            width: 100px;
+            height: 100px;
+            background-color: blueviolet;
+
+        }
+        #box3{
+            width: 100px;
+            height: 100px;
+            background-color: tomato;
+
+        }
+        .drag{
+            position: absolute;
+        }
+        .ins{
+            z-index: 1;
+        }
+    </style>
+</head>
+<body>
+哈哈  哈哈
+<div id="box1"></div>
+<div id="box2" class="drag ins"></div>
+<div id="box3" class="drag"></div>
+
+<script>
+    (function () {
+        /*
+    *   将所有的onxxx修改为 addEventListener()
+    *   我希望页面中的元素只要含有 drag 这个class的就可以被拖拽
+    * */
+        //创建一个变量  默认drag为null
+        let dragEle =null;
+        let left,top;
+        document.addEventListener('mousedown',function (event) {
+            //判断鼠标按下的元素是否含有drag
+            event.preventDefault();
+            if (event.target.classList.contains('drag')){
+                //进入判断证明有drag类的
+                dragEle=event.target;
+                //鼠标按下时  判断鼠标按下在元素中的位置
+                left=event.clientX-dragEle.offsetLeft;
+                top=event.clientY-dragEle.offsetTop;
+                dragEle.classList.add('ins')
+                //event.style.zIndex=1;
+            }
+        })
+
+        document.addEventListener('mousemove',function (event) {
+            //判断鼠标是否按下  如果按下  则进行移动
+            if (dragEle){
+                dragEle.style.left=event.clientX-left+'px';
+                dragEle.style.top=event.clientY-top+'px';
+            }
+
+        })
+        document.addEventListener('mouseup',function (event) {
+            dragEle =null;
+        })
+    })();
+
+</script>
+
+</body>
+</html>

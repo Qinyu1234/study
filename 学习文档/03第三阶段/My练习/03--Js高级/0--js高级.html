@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        /*
+        面向对象  将父类的属性及方法让子类继承
+            比如  创建Dog的类型  然后让Dog的子类 金毛继承属性及方法
+         */
+        function Dog(name,age,color) {
+            this.name=name;
+            this.age=age;
+            this.color=color;
+        }
+        //给构造函数添加方法  一般不直接在构造函数直接添加方法 会将方法添加在构造函数的原型对象prototype上  这样实例也会访问到
+        Dog.prototype.run=function () {
+            console.log("可以跑");
+        }
+        //创建Dog的实例化对象
+        var d1=new Dog('maqiu',2,'black');
+        console.log(d1);
+        d1.run();
+        //创建子类  金毛
+        function Jm(name,age,color) {
+            //正常也是需要创建属性接收实参  但是如果想让金毛也使用Dog的类  此时可以
+            /*this.name=name;
+            this.age=age;
+            this.color=color;*/
+            Dog.call(this,name,age,color);
+        }
+        //如果想让子类也访问到父类的函数  则需要将子类的显示原型=父类的一个实例
+        Jm.prototype=new Dog();
+        Jm.prototype.constructor=Jm;
+        Jm.prototype.play=function () {
+            console.log('可以玩');
+        }
+        //将子类jm的显示原型改为父类Dog的实例  找方法时  先在自身找  即先在Jm的显示原型找（父类的__proto__）
+        var j1=new Jm('lack',3,'black');
+        //如果__proto__没有 则去构造函数的显示原型（prototype）找  最终找到run的函数
+        j1.run();
+        console.log(j1);
+        j1.play();
+        d1.play();
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

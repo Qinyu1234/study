@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+
+        .outer{
+            width: 500px;
+            margin: 50px auto;
+            text-align: center;
+            padding: 10px;
+            background: rgba(100,100,50,0.5);
+
+        }
+        
+    </style>
+    <script>
+        window.onload=function () {
+            let prev=document.getElementById("prev");
+            let next=document.getElementById("next");
+            let img=document.getElementsByTagName("img")[0];
+            let info=document.getElementById("info");
+
+            //创建一个图片的数组
+            let arr=["img/1.jpg","img/2.jpg","img/3.jpg","img/4.jpg","img/5.jpg"];
+            //创建一个变量，改变索引位置达到图片切换
+            let index=0;
+
+            prev.onclick=function () {
+                //索引自减
+                index--
+                //判断index的范围,当索引最小为0时，索引改为最大，重新循环
+                if (index<0){
+                    index=arr.length-1;
+                }
+                img.src=arr[index];
+                info.innerHTML="当前第"+(index+1)+"张，共"+arr.length+"张";
+            };
+            next.onclick=function () {
+                //索引自增
+                index++
+                //判断  当索引为最大值时，从索引0位置重新
+                if (index>arr.length-1){
+                    index=0;
+                }
+                img.src=arr[index];
+                info.innerHTML="当前第"+(index+1)+"张，共"+arr.length+"张";
+            };
+
+        };
+    </script>
+</head>
+<body>
+<div class="outer">
+    <p id="info">当前第1张，共5张</p>
+    <img src="img/1.jpg" alt="图片">
+    <button id="prev">上一张</button>
+    <button id="next">下一张</button>
+</div>
+
+</body>
+</html>

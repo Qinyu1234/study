@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>03_回到顶部</title>
+  <style>
+    #to_top {
+      width: 30px;
+      height: 40px;
+      font: 14px/20px arial;
+      text-align: center;
+      background: #06c;
+      position: fixed;
+      cursor: pointer;
+      color: #fff;
+      right: 150px;
+      top: 500px;
+    }
+  </style>
+</head>
+<body style="height: 2000px;">
+<img src="img/b1.png" alt="">
+<img src="img/b2.png" alt="">
+<img src="img/b3.png" alt="">
+<img src="img/b1.png" alt="">
+<img src="img/b2.png" alt="">
+<img src="img/b3.png" alt="">
+<img src="img/b1.png" alt="">
+<img src="img/b2.png" alt="">
+<img src="img/b3.png" alt="">
+<div id="to_top">返回顶部</div>
+
+<script src="js/jquery-1.10.1.js"></script>
+<script type="text/javascript">
+/*
+记录 回到顶部  需要鼠标移动总距离 移动时间  每次移动时间
+ */
+
+  //移动时间
+  var time=5000;
+  //每次移动时间间隔
+  var timene=50;
+
+  $('#to_top').click(function () {
+    //移动总距离
+    var offset=$('html').scrollTop()+$('body').scrollTop();
+    //每次移动间距 速度  总距离/（总时间/时间间隔）
+    var itemoffset=offset/(time/timene);
+    var clears=setInterval(function () {
+      offset -= itemoffset;
+      if (offset<=0){
+       clearInterval(clears);
+      }
+      $('html,body').scrollTop(offset);
+    },timene)
+  })
+
+
+</script>
+</body>
+
+</html>

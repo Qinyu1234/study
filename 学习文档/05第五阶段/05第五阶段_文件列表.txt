@@ -1,0 +1,122 @@
+│  my练习.rar
+│  共享文件.rar
+│  
+├─day01-ajax
+│      1_ajax的简介.mp4
+│      2_ XML的简介.mp4
+│      3_ajax的特点.mp4
+│      4_搭建测试ajax请求服务器.mp4
+│      5_ajax小试牛刀.mp4
+│      6_xhr的5种状态.mp4
+│      7_ajax_get请求.mp4
+│      8_ajax_post请求.mp4
+│      9_复习git相关操作.mp4
+│      10_vscode快捷键_代码片段.mp4
+│      11_ajax解析json数据.mp4
+│      12_连续解构赋值.mp4
+│      13_解决IE浏览器GET缓存问题.mp4
+│      14_请求异常与超时的处理.mp4
+│      15_取消请求.mp4
+│      16_避免多次重复请求.mp4
+│      17_jQuery封装的ajax.mp4
+│      18_演示回调地狱mp4.mp4
+│      19_跨域与同源策略.mp4
+│      20_jsonp解决跨域.mp4
+│      20_复习.mp4
+│      21_完善jsonp.mp4
+│      22_jquery封装的jsonp.mp4
+│      23_cors解决跨域.mp4
+│      24_总结ajax.mp4
+│      源码.rar
+│      
+├─day02-promise
+│      1_函数对象与实例对象.mp4
+│      2_回调函数的分类.mp4
+│      3_错误类型的说明.mp4
+│      4_js中错误的处理.mp4
+│      4_js错误处理_捕获错误.mp4
+│      5_js错误处理_抛出错误.mp4
+│      6_初始Promise.mp4
+│      7_Promise的基本使用.mp4
+│      8_与ajax配合使用.mp4
+│      9_封装ajax请求.mp4
+│      10_包管理器的对比.mp4
+│      11_复习.mp4
+│      12_纯回调封装ajax.mp4
+│      13_验证then的返回值.mp4
+│      14_Promise.prototype.catch.mp4
+│      15_Promise.resolve与Promise.reject.mp4
+│      16_Promise.all与Promise.race.mp4
+│      17_如何改变Promise实例的状态.mp4
+│      18_改变状态与指定回调的顺序.mp4
+│      19_then的链式调用.mp4
+│      20_纯回调会引起的问题(回调地狱).mp4
+│      21_使用then的链式调用解决回调地狱.mp4
+│      22_中断Promise链.mp4
+│      23_错误的穿透.mp4
+│      24_Promise的优势.mp4
+│      25_async与await的使用.mp4
+│      26_await的应用.mp4
+│      27_复习.mp4
+│      28_async与await的规则.mp4
+│      29_await的原理.mp4
+│      30_宏队列与微队列.mp4
+│      31_2道面试题.mp4
+│      32_经典面试题.mp4
+│      200826_promise代码资料.zip
+│      
+├─day03-axios
+│      1_HTTP相关.mp4
+│      2_请求方式与请求参数的总结.mp4
+│      3_API的分类.mp4
+│      4_json-server的使用.mp4
+│      5_postman接口测试工具.mp4
+│      6_一般http请求与ajax请求.mp4
+│      7_axios的简介.mp4
+│      8_axios发送一个简单的GET请求.mp4
+│      9_axios发送其他请求.mp4
+│      10_axios的常用配置项.mp4
+│      11_axios.create方法.mp4
+│      12.复习.mp4
+│      13.请求拦截器.mp4
+│      14.响应拦截器.mp4
+│      15.一个基本的取消请求.mp4
+│      16.取消请求和拦截器配合使用.mp4
+│      17.批量发送请求.mp4
+│      代码资料.rar
+│      
+├─day04-模块化
+│      1.模块化的简介.mp4
+│      2.CommonJS使用module.exports暴露内容.mp4
+│      3.CommonJS使用exports.xxxx暴露内容.mp4
+│      4.CommonJS在浏览器端的实现.mp4
+│      5.初识ES6模块化.mp4
+│      6.ES6模块化_分别暴露.mp4
+│      7.ES6模块化_统一暴露.mp4
+│      8.ES6模块化_默认暴露.mp4
+│      9.ES6模块化_同时使用多种暴露方式.mp4
+│      代码.zip
+│      
+└─day05-webpack
+        1.复习.mp4
+        2.对构建工具的理解.mp4
+        3.对webpack的理解.mp4
+        4.webpack小试牛刀.mp4
+        5.验证webpack能处理哪些文件.mp4
+        6.配置文件的使用.mp4
+        7.配置webpack解析css为js.mp4
+        8.配置webpack解析less为js.mp4
+        9.配置webpack生成html文件.mp4
+        10.配置webpack优化图片文件.mp4
+        11.配置webpack处理html中的图片.mp4
+        12.配置webpack处理其他资源.mp4
+        13.配置webpack的dev-server.mp4
+        14.配置webpack提取css为单独文件.mp4
+        15.配置webpack处理css兼容.mp4
+        16.配置webpack语法检查.mp4
+        17.配置webpack语法转换.mp4
+        18.配置webpack处理js兼容性问题.mp4
+        19.配置webpack压缩css.mp4
+        20.总结.mp4
+        20201123_164258.mp4
+        代码.zip

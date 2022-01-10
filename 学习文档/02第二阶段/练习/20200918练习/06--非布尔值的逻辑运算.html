@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        //与运算&&  找flose  如果第一个为flose  则直接返回第一个值，否则返回第二个值
+        //或运算||  找true  如果第一个为true  则直接返回第一个值，否则返回第二个值
+        let result="hello" && 123;//hello和123都是true  返回第二个
+        //result=NaN && 0;//nan为flose  直接返回第一个NaN
+       // result=null && 0;//null是flose  直接返回第一个
+        result=0 && undefined; //0是flose  返回第一个
+        result=0||"hello";
+
+
+
+        console.log("result=",result);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

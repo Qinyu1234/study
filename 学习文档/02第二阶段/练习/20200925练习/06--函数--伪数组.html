@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        /*
+            除了this以外，函数中还有一个隐含的参数arguments，
+        /*
+        function fn(a,b) {
+            sam=a+b
+            return sam;
+        }
+        fn(10,20);
+        console.log(sam);
+
+         */
+        function fn2() {
+            let result=0;
+            for (let i=0;i<arguments.length;i++){
+                //遍历arguments中的元素
+                result=result+arguments[i];
+            }
+            return result
+        }
+        console.log(fn2(20,30,40,40));
+    </script>
+</head>
+<body>
+
+</body>
+</html>
