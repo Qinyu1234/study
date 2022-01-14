@@ -1,6 +1,3 @@
-const { reduce } = require("core-js/core/array")
-const { padStart } = require("core-js/core/string")
-
 canvas //h5新标签,可以通过js在这个标签上绘制图案
 
 sass

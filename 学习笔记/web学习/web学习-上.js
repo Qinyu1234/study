@@ -356,13 +356,16 @@ CSS 清除浮动
 
 */
 
-/* 7.a标签的伪类选择器 a:link{color: red;}
+/* 7.
+    a标签的伪类选择器 a:link{color: red;}
 
-    link:修改冲未被访问过状态下的样式(测试未生效)
-    visited:修改被访问过的状态样式
-        上面两个简写a{color:red}
-    hover:修改鼠标悬停在a标签上的状态
-    active:修改鼠标长按下的样式
+        link:修改冲未被访问过状态下的样式(测试未生效)
+        visited:修改被访问过的状态样式
+            上面两个简写a{color:red}
+        hover:修改鼠标悬停在a标签上的状态
+        active:修改鼠标长按下的样式
+    focus:命中后
+    checked:
     */
 
 /* 8.过渡模块
@@ -403,9 +406,9 @@ transition:width 5s linear 0s,background 6s ease 0s;
         box-shadow: 10px 10px 10px 10px black inset;
         水平偏移 垂直偏移 模糊度 阴影扩展 阴影颜色 内外阴影
         缩写:box-shadow: 10px 10px 10px 水平偏移 垂直偏移 模糊度
-    2,text-shadow:10px 10px 10px black
-    水平偏移 垂直偏移 模糊度 阴影颜色
-    3,opacity 透明度
+        2,text-shadow:10px 10px 10px black
+        水平偏移 垂直偏移 模糊度 阴影颜色
+        3,opacity 透明度
 
 技巧:
 水平居中 left50% transform:translateX(-50%)
